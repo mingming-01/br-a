@@ -1,0 +1,14 @@
+{
+  "period_start": "2026-08-11",
+  "period_end": "2026-10-06",
+  "total_days": 35,
+  "total_records": 35,
+  "ritual_count": 35,
+  "project_count": 0,
+  "ability_count": 3,
+  "category_counts": {
+    "자기조절력": 14,
+    "자기동기력": 8,
+    "대인관계력": 13
+  }
+}
