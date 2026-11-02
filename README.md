@@ -58,6 +58,9 @@ device/input/records.json의 35건은 전체 리추얼 일수와 다른 데이�
 - 부서별·개인별 접근 정책 요구사항과 정책 판정 흐름 검토
 - 팀 프로젝트로 진행했으며 소스 저장소는 비공개입니다.
 
+- 서비스 시연: https://sentra.koreacentral.cloudapp.azure.com/
+- GitHub: https://github.com/mingming-01/sentra (비공개)
+
 #### Passkey Private Space · 개인 인증 공간
 
 Task 8에서 시작한 개인 프로필 프로젝트를 WebAuthn 기반 Passkey 인증 서비스로 확장했습니다.
@@ -77,8 +80,8 @@ Task 8에서 시작한 개인 프로필 프로젝트를 WebAuthn 기반 Passkey 
 
 전체 평균에서는 ON 조건의 타이핑 속도가 OFF보다 낮게 나타났지만, 동일 문장 비교에서는 결과가 일관되지 않았습니다. 따라서 시각 효과가 타이핑 성능을 낮춘다고 단정하지 않고 실제 데이터를 기준으로 결과와 결론을 작성했습니다.
 
-- 연구 결과물: `typing-focus-research`
-- 공개 페이지: https://mingming-01.github.io/typing-focus-research/
+- 연구 결과물: https://mingming-01.github.io/typing-focus-research/
+- GitHub: https://github.com/mingming-01/typing-focus-research
 
 #### Maple Growth Tracker
 
@@ -88,6 +91,13 @@ Task 8에서 시작한 개인 프로필 프로젝트를 WebAuthn 기반 Passkey 
 
 - GitHub: https://github.com/mingming-01/maple-growth-tracker
 - 서비스: https://maple-growth-tracker.onrender.com/
+
+#### PDS Diary
+
+PLAN / DO / SEE 방식으로 계획과 실행, 회고를 기록하는 개인 관리 서비스입니다.
+
+- 서비스: https://pds-diary-0u5g.onrender.com/
+- GitHub: https://github.com/mingming-01/pds-diary
 
 #### BR-B · 타이핑 집중 환경 비교기
 
