@@ -24,7 +24,7 @@ https://mingming-01.github.io/br-a/
 
 ### About me
 
-진로를 고민했던 대학 시기부터 소프트웨어에 관심을 갖게 된 과정, 개발 공부와 팀 프로젝트 경험, 현재 ALEPH에서 과제를 수행하며 작업을 끝까지 확인하는 습관을 갖게 된 과정을 정리했습니다.
+진로를 고민했던 대학 시기부터 소프트웨어에 관심을 갖게 된 과정, 개발 공부와 팀 프로젝트 경험을 정리했습니다. 최근에는 사내망 접근통제 캡스톤 SENTRA와 WebAuthn 기반 Passkey Private Space를 구현하며 백엔드·인증·데이터 저장 및 운영 환경까지 경험한 내용을 추가했습니다.
 
 실제 경험을 바탕으로 작성했으며, 다른 사람의 실명이나 개인정보는 공개하지 않았습니다.
 
@@ -37,6 +37,7 @@ SKT ALEPH 활동 중 작성한 리추얼 기록을 바탕으로 활동 기간과
 - 기록 기간: 2026-08-11 ~ 2026-10-06
 - 기록한 날: 35일
 - 리추얼 기록: 35건
+- 프로젝트 기록: 0건
 - 확인한 능력: 3가지
 - 자기조절력: 14건
 - 대인관계력: 13건
@@ -46,7 +47,29 @@ SKT ALEPH 활동 중 작성한 리추얼 기록을 바탕으로 활동 기간과
 
 ### Works
 
-대표 작업으로 다음 프로젝트를 소개합니다.
+대표 작업은 실제 구현 범위와 담당 역할을 기준으로 정리했습니다.
+
+#### SENTRA · 사내망 다계층 접근통제 시스템
+
+사내 사용자와 자원에 대한 접근을 역할·부서·개인 단위로 통제하고, 요청 결과를 감사 로그로 관리하는 팀 캡스톤 프로젝트입니다.
+
+- 담당: Flask 백엔드 API, 로그인 인증, SQLite 데이터베이스 설계 및 마이페이지 연동
+- Nginx·Gunicorn 기반 서버 실행 환경 구성
+- 부서별·개인별 접근 정책 요구사항과 정책 판정 흐름 검토
+- 팀 프로젝트로 진행했으며 소스 저장소는 비공개입니다.
+
+#### Passkey Private Space · 개인 인증 공간
+
+Task 8에서 시작한 개인 프로필 프로젝트를 WebAuthn 기반 Passkey 인증 서비스로 확장했습니다.
+
+- 계정별 1회용 초대 코드 기반 최초 등록
+- WebAuthn Challenge, RP ID, Origin 검증
+- 세션 보안, 로그인 제한, Passkey 추가·삭제 시 재인증
+- 로컬 SQLite와 운영 PostgreSQL 분리
+- Render 배포 및 Supabase PostgreSQL 운영 저장소 연결
+
+- 서비스: https://my-profile-ohhl.onrender.com/
+- GitHub: https://github.com/mingming-01/my-profile
 
 #### Task 10 · 타이핑 연구
 
@@ -74,6 +97,16 @@ Task 10에서 진행한 논문 실험 결과를 실제 사용 가능한 웹 앱�
 
 - 앱: https://mingming-01.github.io/typing-focus-app/
 - GitHub: https://github.com/mingming-01/typing-focus-app
+
+### Project Stack
+
+프로젝트에서 실제 사용한 기술을 분야별로 정리합니다. 기술 숙련도를 임의 점수로 표현하지 않고, 적용한 프로젝트와 함께 확인할 수 있도록 구성했습니다.
+
+- **Backend:** Java, Python, Flask, REST API
+- **Frontend:** JavaScript, HTML, CSS, React, TypeScript
+- **Database:** SQLite, PostgreSQL, Supabase
+- **Security & Operations:** WebAuthn, Git, GitHub, Linux, Nginx, Gunicorn
+- **External API / AI:** Nexon Open API, Gemini API
 
 ## 제출 문서
 
@@ -172,7 +205,8 @@ Task 10에서 진행한 논문 실험 결과를 실제 사용 가능한 웹 앱�
 1. 공개 사이트 주소를 브라우저에서 확인합니다.
 2. About me에서 진로를 고민했던 과정부터 현재까지의 이야기가 이어지는지 확인합니다.
 3. Records에서 실제 리추얼 기록을 기준으로 한 숫자를 확인합니다.
-4. Works에서 Task 10 연구, Maple Growth Tracker, BR-B 타이핑 집중 환경 비교기를 확인합니다.
+4. Works에서 SENTRA, Passkey Private Space, Maple Growth Tracker, Task 10 연구, BR-B 타이핑 집중 환경 비교기를 확인합니다.
+5. Project Stack에서 기술을 사용한 프로젝트와 적용 범위를 확인합니다.
 5. BR-B 링크를 열어 로그인 없이 앱을 실행하고 OFF → ON 테스트와 결과 비교가 가능한지 확인합니다.
 6. `documents/`에서 이력서, 자기소개서, 경력기술서를 확인합니다.
 7. `device/README.md`의 실행 방법에 따라 장치를 다시 실행할 수 있는지 확인합니다.
@@ -190,6 +224,8 @@ Task 10에서 진행한 논문 실험 결과를 실제 사용 가능한 웹 앱�
 - 비밀번호, API 키, 토큰 등의 비밀정보를 저장하거나 공개하지 않았습니다.
 - 사이트 방문자의 로그인, 댓글, 별도 회원가입 기능은 사용하지 않습니다.
 - BR-B 타이핑 앱은 개인 테스트 결과를 서버로 전송하지 않고 현재 브라우저에서만 표시합니다.
+- SENTRA는 팀 프로젝트이며 저장소가 비공개이므로, 포트폴리오에는 공개 가능한 역할과 기술 요약만 제공합니다.
+- Passkey Private Space는 WebAuthn 학습·시연용 프로젝트이며 실제 민감정보 보관 서비스가 아닙니다.
 
 ## 현재 한계
 
