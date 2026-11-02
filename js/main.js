@@ -9,10 +9,15 @@ async function loadRecordsStats() {
         const stats = await response.json();
 
         const totalElement = document.getElementById("record-total");
+        const countElement = document.getElementById("record-count");
         const typesElement = document.getElementById("record-types");
 
         if (totalElement) {
             totalElement.textContent = stats.total_days;
+        }
+
+        if (countElement) {
+            countElement.textContent = stats.total_records;
         }
 
         if (typesElement) {
