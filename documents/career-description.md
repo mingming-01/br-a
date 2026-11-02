@@ -50,7 +50,7 @@ QR/바코드를 활용해 상품과 재고를 관리할 수 있도록 만든 웹
 
 *현재는 교육기관 제공 서버 운영 종료로 서비스 접속이 어렵습니다.*
 
-**GitHub:** github.com/in27sung/stock-mate
+**GitHub:** [in27sung/stock-mate](https://github.com/in27sung/stock-mate)
 
 ---
 
@@ -76,7 +76,7 @@ QR/바코드를 활용해 상품과 재고를 관리할 수 있도록 만든 웹
 
 *현재는 교육기관 제공 서버 운영 종료로 서비스 접속이 어렵습니다.*
 
-**GitHub:** github.com/mingming-01/packtory_
+**GitHub:** [mingming-01/packtory_](https://github.com/mingming-01/packtory_)
 
 ---
 
@@ -103,7 +103,7 @@ QR/바코드를 활용해 상품과 재고를 관리할 수 있도록 만든 웹
 
 *현재는 교육기관 제공 서버 운영 종료로 서비스 접속이 어렵습니다.*
 
-**GitHub:** github.com/shoqying/MrBean
+**GitHub:** [shoqying/MrBean](https://github.com/shoqying/MrBean)
 
 ---
 
