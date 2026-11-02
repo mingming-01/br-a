@@ -114,7 +114,7 @@ Task 10에서 진행한 논문 실험 결과를 실제 사용 가능한 웹 앱�
 - **Backend:** Java, Python, Flask, REST API
 - **Frontend:** JavaScript, HTML, CSS, React, TypeScript
 - **Database:** SQLite, PostgreSQL, Supabase
-- **Security & Operations:** WebAuthn, Git, GitHub, Linux, Nginx, Gunicorn
+- **Security & Operations:** WebAuthn, Git, GitHub, Linux
 - **External API / AI:** Nexon Open API, Gemini API
 
 ## 제출 문서
