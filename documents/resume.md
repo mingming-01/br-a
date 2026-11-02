@@ -1,241 +1,175 @@
-# 이력서
+# 이력서 원본
 
-## 허민
-**소프트웨어 개발 직무 지원**
+> 취업 준비용 기본 이력서입니다. 지원할 때는 채용공고에 맞춰 프로젝트와 기술의 순서를 조정하고, 실제로 수행한 범위와 확인된 결과만 기재합니다.
 
-궁금한 것을 파고들어 의미를 발견하고, 사람들과 함께 앞으로 나아가는 사람입니다.
+## 기본 정보
 
-- Email: 11mm11mm@naver.com
-- GitHub: github.com/mingming-01
-
----
-
-## Education
-
-### 인제대학교 나노융합공학부
-**2020.03 ~ 2024.02 · 졸업**
-
-반도체 및 나노융합 분야를 전공했습니다.  
-반도체 공정 실습과 실험을 경험했으며, 대학 프로젝트에서 센서와 통신 기술을 활용한 화재 알림 시스템을 제작하면서 소프트웨어 개발에 관심을 갖게 되었습니다.
+- 이름: 허민 (HEO MIN)
+- 이메일: gjals0318@gmail.com
+- GitHub: https://github.com/mingming-01
+- 포트폴리오 저장소: https://github.com/mingming-01/career-portfolio
+- 공개 프로필: https://my-profile-ohhl.onrender.com/
 
 ---
 
-## Training
+## 핵심 소개
 
-### 아이티윌 백엔드 개발 교육
-**2024.08 ~ 2025.05**
+반도체공학을 전공하고 Java·Spring 기반 백엔드 개발 교육과 Python·Flask 프로젝트를 경험했습니다. 개인 프로젝트에서는 NEXON Open API 데이터를 가공해 성장 기록을 저장·시각화하는 웹서비스를 만들고 Render에 배포했습니다. ALEPH 캡스톤 SENTRA에서는 Flask API, JWT 인증, 직원 초대 가입과 기간제 접근권한 흐름을 구현하고 주요 시나리오를 검증했습니다. 제조·생산관리 팀 프로젝트에서 BOM, 원자재, 입고·LOT, 창고와 재고 데이터를 다루며 제조 업무와 IT 시스템을 연결하는 분야에도 관심을 넓혀 왔습니다.
 
-웹 백엔드 개발을 중심으로 Java와 JavaScript 등을 학습하고 팀 프로젝트를 수행했습니다.  
-기능 구현뿐 아니라 팀원과 작업을 조율하고, 문제를 직접 확인하며 해결하는 과정을 경험했습니다.
+## 학력
+
+### 인제대학교 나노융합공학부 반도체공학 전공
+- 학위: 학사
+- 관련 경험: 반도체 공정 실습, 클린룸 실습, 전공 실험
+- 프로젝트: Arduino, Bluetooth, MIT App Inventor를 활용한 화재 알림 시제품
+
+## 교육
 
 ### SKT K-뉴딜 ALEPH 1기
-**2026.08 ~ 2026.11**
+- 기간: 2026.08 ~ 2026.11 (2026년 11월 기준 과정 진행 중)
+- 주요 내용: AI 활용, Python, Linux, API, 자동화, 데이터 분석 및 인프라 보안 실습
+- 관련 경험: SENTRA 캡스톤, T10 타이핑 연구, Studio 과제 및 개인 앱 프로젝트
 
-AI를 활용한 개발 및 데이터 분석 프로젝트와 다양한 실습 과제를 수행하고 있습니다.  
-요구사항 확인부터 구현, 분석, 실행 및 결과 검증까지 직접 진행하며 결과물을 완성하는 경험을 쌓고 있습니다.
-
----
-
-## Representative Projects
-
-### SENTRA · 사내망 다계층 접근통제 시스템
-**팀 캡스톤 · 백엔드 담당**
-
-사내 사용자와 자원에 대한 접근을 역할·부서·개인 단위로 통제하고, 요청 결과를 감사 로그로 관리하는 시스템입니다.
-
-- Flask 백엔드 API 구현 및 프런트엔드 연동
-- PBKDF2 기반 로그인 인증 및 토큰 반환
-- SQLite 데이터베이스 설계와 마이페이지 데이터 연동
-- 부서별·개인별 접근 정책 요구사항 검토 및 정책 흐름 협업
-
-*팀 프로젝트이며 소스 저장소는 비공개입니다.*
-
-- Service: [SENTRA 시연](https://sentra.koreacentral.cloudapp.azure.com/)
-- GitHub: [mingming-01/sentra (비공개)](https://github.com/mingming-01/sentra)
-
-### Maple Growth Tracker
-**개인 프로젝트 · 웹서비스**
-
-메이플스토리 캐릭터의 성장 기록을 확인하기 위해 만든 개인 웹서비스입니다.
-
-- 공개 API를 활용한 캐릭터 데이터 조회 및 가공
-- 성장 기록 및 최근 성장 추이 확인
-- 성장 속도 및 레벨업 예측
-- Gemini API를 활용한 성장 데이터 분석
-- 실제 서비스 형태로 구현 및 배포
-
-**Service:** [Maple Growth Tracker](https://maple-growth-tracker.onrender.com/)  
-**GitHub:** [mingming-01/maple-growth-tracker](https://github.com/mingming-01/maple-growth-tracker)
+### ITWill 백엔드 개발 교육
+- 기간: 2024.08 ~ 2025.05
+- 주요 내용: Java, JavaScript, 웹 백엔드 개발, Spring 계열 기술, JSP, MyBatis 및 데이터베이스
+- 관련 프로젝트: Stock-Mate, MrBean, Packtory_DE
 
 ---
 
-### 시각적 효과가 타이핑 성능에 미치는 영향
-**SKT ALEPH 과제 10 · 연구 프로젝트**
+## 기술 경험
 
-시각적 효과의 유무가 타이핑 성능에 영향을 주는지 직접 실험하고 분석한 연구입니다.
+| 분야 | 사용 경험 |
+|---|---|
+| 프로그래밍 | Java, JavaScript, Python, HTML5, CSS3, TypeScript |
+| 백엔드 / 웹 | Spring Boot, Spring MVC, Flask, REST API, JSP, Thymeleaf, React |
+| 데이터베이스 | MySQL, SQLite, H2, PostgreSQL(Supabase 연동 경험) |
+| 데이터 접근 | MyBatis, JPA/Hibernate, SQLAlchemy |
+| 인증 / 보안 | JWT, 비밀번호 해시, 역할·소속·자원 기반 접근 정책, WebAuthn/Passkey 실습 |
+| API / AI | NEXON Open API, Gemini API, OpenRouter |
+| 데이터 분석 | CSV 처리, Python 분석, 실험 결과 비교, Chart.js 시각화 |
+| 개발 환경 / 배포 | Git, GitHub, Linux, Bash, Gradle, Node.js, npm, Render, GitHub Pages |
+| 기타 | Arduino, Bluetooth, MIT App Inventor, CAD, 반도체 공정 실습 |
 
-- 타이핑 실험 웹페이지 제작
-- 실험 데이터 수집 및 CSV 정리
-- Python을 활용한 데이터 분석
-- 조건별 타이핑 속도와 정확도 비교
-- 가설과 실제 결과 비교 및 결론 도출
-- 분석 결과를 논문 형태로 정리
-- 재현 가능한 분석 구조 구성
-
-**Project:** [연구 결과 페이지](https://mingming-01.github.io/typing-focus-research/)  
-**GitHub:** [mingming-01/typing-focus-research](https://github.com/mingming-01/typing-focus-research)
-
----
-
-### BR-B · 타이핑 집중 환경 비교기
-**개인 프로젝트 · Task 10 연구 확장**
-
-Task 10에서 다룬 시각 효과의 ON/OFF 조건을 사용자가 직접 비교할 수 있도록 만든 웹 앱입니다.
-
-- 동일한 문장을 입력하는 조건별 테스트
-- 개인 타이핑 속도와 정확도 비교
-- 개인 테스트와 연구 결과를 구분해 표시
-
-**Service:** [BR-B 타이핑 집중 환경 비교기](https://mingming-01.github.io/typing-focus-app/)  
-**GitHub:** [mingming-01/typing-focus-app](https://github.com/mingming-01/typing-focus-app)
+※ 각 기술의 숙련도는 동일하지 않습니다. 위 항목은 교육과 프로젝트에서 실제로 사용하거나 실습한 경험을 기준으로 정리했습니다.
 
 ---
 
-### Passkey Private Space
-**SKT ALEPH 과제 8에서 시작한 개인 프로젝트**
+## 주요 프로젝트
 
-개인 프로필 프로젝트를 WebAuthn 기반 Passkey 인증과 계정별 비공개 영역을 갖춘 서비스로 확장했습니다.
+### SENTRA — 사내망 다계층 접근통제 시스템
+- **유형:** ALEPH 1기 캡스톤 팀 프로젝트
+- **기술:** Python, Flask, PyJWT, SQLite, React, TypeScript
+- **GitHub:** https://github.com/mingming-01/sentra
+- **주요 기여:**
+  - Flask API 및 SQLite 기반 데이터 처리
+  - 로그인 인증과 토큰 발급, 계정 상태 확인
+  - 직원 명부와 사원번호·일회용 초대 코드를 이용한 가입 흐름
+  - 직원 계정 비활성화에 따른 접근 제한
+  - 기간제 권한 요청, 운영자 승인·반려, 만료·회수 흐름 구현
+  - 접근 거부 사유 및 감사 로그 관련 기능 연결
+  - 주요 가입·비활성화·권한 승인 전후 및 회수 후 시나리오 테스트
+- **배운 점:** 인증과 인가의 구분, 서버 중심 접근통제, 임시 권한의 만료·회수 관리
 
-- 계정별 일회용 초대 토큰을 통한 최초 Passkey 등록
-- WebAuthn Challenge, RP ID, Origin 검증
-- 로그인 세션 보안 및 인증 시도 제한
-- Passkey 추가·삭제 시 최근 인증 확인 및 마지막 Passkey 삭제 방지
-- 로컬 SQLite / 운영 PostgreSQL 분리
-- Render 배포 및 Supabase PostgreSQL 연결
-- 실제 브라우저에서 계정 분리와 등록·로그인 동작 검증
+### Maple Growth Tracker — 게임 성장 데이터 웹서비스
+- **유형:** 개인 프로젝트
+- **기술:** Python, Flask, NEXON Open API, JavaScript, Chart.js, Gemini API, SQLite, PostgreSQL(Supabase), Render
+- **GitHub:** https://github.com/mingming-01/maple-growth-tracker
+- **배포:** https://maple-growth-tracker.onrender.com
+- **주요 기여:**
+  - NEXON Open API 연동 및 캐릭터 데이터 가공
+  - 날짜별 성장 기록 저장·조회 및 30일·90일 기간 데이터 수집
+  - 경험치·성장량·랭킹 변화 계산과 그래프 시각화
+  - Gemini API / OpenRouter 기반 AI 성장 리포트
+  - 캐릭터 비교, 관심 캐릭터, PNG/PDF 결과 저장
+  - 관리자 로그 조회 및 배포 환경의 DB 연결·저장 상태 점검
+- **배운 점:** 외부 API 예외 처리, 데이터 누락 관리, 로컬·배포 환경의 데이터 저장 차이
 
-**Service:** [Passkey Private Space](https://my-profile-ohhl.onrender.com/)  
-**GitHub:** [mingming-01/my-profile](https://github.com/mingming-01/my-profile)
+### Packtory_DE — MES형 생산관리 팀 프로젝트
+- **기간:** 2025.03 ~ 2025.05
+- **기술:** Java 21, Spring Boot, JPA/Hibernate, MyBatis, QueryDSL, MySQL, H2, Thymeleaf, Gradle
+- **GitHub:** https://github.com/mingming-01/packtory_
+- **주요 기여:**
+  - 직원 등록·조회·수정·삭제 및 상세 화면
+  - 부서·하위 부서 코드 연결과 화면 표시 매핑
+  - 직급 CRUD
+  - Product 중심 데이터 구조 정리 및 제품 기능 구현
+  - 원자재·창고·입출고 관련 기능
+  - 품질 기준·검사 이력 및 근무 스케줄 기능
+- **배운 점:** 공통코드와 계층형 조직 데이터, JPA·MyBatis 병행 구조, 기존 코드 구조를 이해한 뒤 기능을 확장하는 방식
+- **추가 경험:** 팀 서버에서 기능을 시연·테스트했으며, 프로젝트 후반 Oracle 전환은 시도했으나 연결까지 완료하지 못함
 
----
+### MrBean — 제조·생산관리 웹 프로젝트
+- **기술:** Java 11, Spring MVC, MyBatis, MySQL, JSP, JSTL, JavaScript
+- **GitHub:** https://github.com/shoqying/MrBean
+- **주요 기여:**
+  - 원자재 CRUD 및 JSP·Controller·Service·DAO·Mapper 연결
+  - 완제품 CRUD와 BOM ID 연결
+  - BOM 등록·조회·수정·삭제, 이름 중복 확인, ID 자동 생성
+  - BOM 비율 0~100 검증 및 원자재 정보 JOIN 조회
+  - 원자재 입고 CRUD와 날짜 기반 LOT 번호 생성·연결
+  - 창고 관련 화면 일부 수정
+- **배운 점:** 제조 데이터 간 관계와 Spring MVC·MyBatis 계층별 요청 흐름
 
-### PDS Diary
-**SKT ALEPH · 개인 프로젝트**
+### Stock-Mate — QR·바코드 기반 재고 관리 팀 프로젝트
+- **기술:** Java 11, Spring Framework, MyBatis, MySQL, JSP, HTML5, CSS3, JavaScript, jQuery
+- **GitHub:** https://github.com/in27sung/stock-mate
+- **주요 기여:**
+  - Category 등록·조회·수정·삭제 CRUD와 관련 SQL 및 JSP 화면
+  - Stock 기능의 Controller, Service, DAO, Mapper, VO와 재고 JSP 수정
+  - 사용자 정보 수정 오류 및 로그인 화면 일부 수정
+  - UserController, 공통 예외 처리, Warehouse Mapper 일부 수정
+- **배운 점:** 상품·카테고리·창고·재고·입출고 간 데이터 관계와 여러 계층을 연결하는 개발 방식
 
-계획하고 실행한 내용을 기록하고 돌아볼 수 있도록 만든 개인 관리 서비스입니다.
-
-- PLAN / DO / SEE 방식의 기록 구조 구성
-- 할 일과 실행 기록 관리
-- 작업 후 회고 기록
-- 웹서비스 구현 및 배포
-
-**Service:** [PDS Diary](https://pds-diary-0u5g.onrender.com/)  
-**GitHub:** [mingming-01/pds-diary](https://github.com/mingming-01/pds-diary)
-
----
-
-## Education Team Projects
-
-### Stock Mate
-**아이티윌 팀 프로젝트 · 교육 과정**
-
-QR/바코드를 활용해 상품과 재고를 관리하는 웹서비스를 제작했습니다.
-
-- 로그인 기능
-- QR/바코드 기반 상품 관리
-- 재고 조회 및 관리
-- 팀원과 역할을 나누어 서비스 개발
-- 교육기관 제공 서버를 이용한 개발 및 배포 경험
-
-*현재는 교육기관 제공 서버 운영 종료로 서비스 접속이 어렵습니다.*
-
-**GitHub:** [in27sung/stock-mate](https://github.com/in27sung/stock-mate)
-
----
-
-### Packtory.DE
-**아이티윌 팀 프로젝트 · 교육 과정**
-
-팀원들과 함께 생산 및 관리 업무를 위한 웹서비스를 개발했습니다.
-
-- 로그인 기능
-- BOM 관리
-- Receipt 관련 기능
-- 팀 단위 개발 및 서버 배포 경험
-
-*현재는 교육기관 제공 서버 운영 종료로 서비스 접속이 어렵습니다.*
-
-**GitHub:** [mingming-01/packtory_](https://github.com/mingming-01/packtory_)
-
----
-
-### Mr.Bean
-**아이티윌 팀 프로젝트 · 교육 과정**
-
-커피공장의 생산 및 관리 업무를 지원하는 웹서비스를 팀원들과 개발했습니다.
-
-- BOM 관리 기능 구현
-- 카테고리 기능 구현
-- 게시판 기능 구현
-- 담당 기능 완료 후 다른 팀원의 작업 지원
-- 교육기관 제공 서버를 이용한 개발 및 배포 경험
-
-*현재는 교육기관 제공 서버 운영 종료로 서비스 접속이 어렵습니다.*
-
-**GitHub:** [shoqying/MrBean](https://github.com/shoqying/MrBean)
+### T10 타이핑 연구 — 실험 설계 및 데이터 분석
+- **유형:** ALEPH 연구 과제
+- **기술:** HTML, CSS, JavaScript, Python, CSV
+- **주요 기여:**
+  - 시각적 효과 ON/OFF 조건의 타이핑 실험 페이지 구성
+  - 총 10회 실험 및 CSV 데이터 수집
+  - Python으로 조건별 속도·정확도 분석 및 그래프 작성
+  - 가설과 실제 결과 비교
+- **분석 결과:** OFF 평균 속도 594.67 / ON 평균 566.00, OFF 정확도 100 / ON 99.47
+- **해석:** 제한된 실험에서 관찰한 결과로 한정하고 일반적인 효과로 확대하지 않음
 
 ---
 
-## ALEPH 수행 경험
+## 기타 프로젝트
 
-SKT K-뉴딜 ALEPH 1기에서 다양한 개발 및 데이터 활용 과제를 수행했습니다.
+### My Profile — 개인 프로필 웹사이트
+- GitHub: https://github.com/mingming-01/my-profile
+- 배포: https://my-profile-ohhl.onrender.com/
+- 개인 프로필 페이지 구성 및 배포
+- T08 과제에서 WebAuthn/Passkey 등록·로그인, challenge 검증, 공개키 기반 인증, Flask session과 계정별 Private 데이터 접근 제어 실습
 
-- Bubble Game — 미니게임 구현
-- Weather Board — 날씨 정보 활용 웹페이지 구현
-- Card Studio — 카드/콘텐츠 제작 서비스 구현
-- PDS Diary — 계획·실행·회고 기록 서비스 구현
-- Passkey Private Space — WebAuthn 인증 및 PostgreSQL 운영 저장소 적용
-- 과제 10 — 타이핑 실험 및 데이터 분석
-- 그 외 AI 활용 개발 및 실습 과제 수행
+### PDS Diary — 계획·실행 기록 서비스
+- 기술: Python, Flask, SQLAlchemy, SQLite, HTML/CSS/JavaScript, pytest
+- Plan → Do → See → Improvement → Next Plan 구조의 개인 기록 서비스
+- Plan Version History, Task와 Execution 분리, 예상·실제 시간 비교, 집계 근거 조회, JSON Export
+- 자동화 테스트 15개 통과 및 실제 데이터 검증
 
-과제별 결과물과 소스 코드는 GitHub 저장소 및 개인 포트폴리오를 통해 확인할 수 있습니다.
-
----
-
-## Core Strengths
-
-### 자기조절력
-
-해야 할 일을 작은 단위로 나누고 우선순위를 정해 진행합니다.  
-작업이 끝난 뒤에도 직접 실행하고 결과를 확인하며 마무리합니다.
-
-### 대인관계력
-
-필요한 경우 먼저 질문하고 다른 사람의 의견을 듣습니다.  
-팀 프로젝트에서는 자신의 방식을 고집하기보다 함께 작업할 수 있는 방법을 찾습니다.
-
-### 자기동기력
-
-모르는 것이 생기면 필요한 내용을 직접 찾아보고 실제 작업에 적용합니다.  
-관심이 생긴 주제를 프로젝트나 결과물로 연결하며 직접 확인하는 것을 중요하게 생각합니다.
+### Arduino + Bluetooth + App Inventor 화재 알림 프로젝트
+- Arduino 센서와 Bluetooth, MIT App Inventor를 연결해 센서 정보를 휴대폰에서 확인하는 화재 알림 시제품 구성
 
 ---
+
+## 강점과 업무 방식
+
+- **원인을 따라가며 해결합니다.** 오류가 발생하면 화면만 수정하지 않고 요청·응답, Controller, Service, 데이터 접근 계층과 실행 환경을 살펴봅니다.
+- **실행 결과로 검증합니다.** 기능을 구현한 뒤 정상 상황과 예외 상황을 나누어 다시 실행합니다.
+- **데이터를 기준으로 판단합니다.** T10에서 가설에 맞추기보다 실제 실험 결과를 기준으로 분석했습니다.
+- **업무 흐름을 함께 봅니다.** 제조 프로젝트에서 BOM, 원자재, 입고, LOT, 창고와 재고 데이터가 연결되는 과정을 경험했습니다.
+- **기존 구조를 이해하려고 합니다.** 팀 프로젝트에서는 기존 코드와 데이터 흐름을 먼저 살펴보고 다른 기능과 자연스럽게 연결되도록 작업합니다.
 
 ## 관심 직무
 
-- 백엔드 개발
-- 웹서비스 개발
-- MES / ERP 등 업무 시스템 개발
-- 반도체·제조 분야와 소프트웨어를 연결하는 개발 업무
-- 데이터와 소프트웨어를 활용한 문제 해결
+- 백엔드 / 웹서비스 개발
+- MES / ERP 개발 및 제조 IT
+- 제조·반도체 분야의 IT / 전산
+- 계정·권한 및 시스템 운영 관련 직무
 
----
+현재는 한 직무만으로 지원 방향을 고정하기보다 실제 채용공고의 담당 업무와 요구 기술을 비교하며 경험을 연결할 수 있는 직무를 좁혀 가고 있습니다.
 
-## Profile
+## 자기소개 한 줄
 
-궁금한 것이 생기면 먼저 찾아보고 직접 확인합니다.  
-예상과 다른 결과가 나오더라도 처음의 생각에 맞추기보다 실제 결과를 기준으로 다시 판단합니다.
-
-반도체·나노융합 분야를 전공하고 백엔드 개발 교육과 다양한 프로젝트를 경험하면서, 기술 자체보다 **실제로 필요한 문제를 해결하고 사용할 수 있는 결과를 만드는 과정**에 관심을 갖게 되었습니다.
-
-앞으로도 새로운 것을 배우는 데 그치지 않고 직접 구현하고 검증하면서, 소프트웨어와 현장의 문제를 연결할 수 있는 개발자로 성장하고 싶습니다.
+> 궁금한 것을 파고들어 의미를 발견하고, 실제로 동작하는 결과로 만들며, 사람들과 함께 앞으로 나아가는 사람.
