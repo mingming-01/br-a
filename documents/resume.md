@@ -38,6 +38,21 @@ AI를 활용한 개발 및 데이터 분석 프로젝트와 다양한 실습 과
 
 ## Representative Projects
 
+### SENTRA · 사내망 다계층 접근통제 시스템
+**팀 캡스톤 · 백엔드 담당**
+
+사내 사용자와 자원에 대한 접근을 역할·부서·개인 단위로 통제하고, 요청 결과를 감사 로그로 관리하는 시스템입니다.
+
+- Flask 백엔드 API 구현 및 프런트엔드 연동
+- PBKDF2 기반 로그인 인증 및 토큰 반환
+- SQLite 데이터베이스 설계와 마이페이지 데이터 연동
+- 부서별·개인별 접근 정책 요구사항 검토 및 정책 흐름 협업
+
+*팀 프로젝트이며 소스 저장소는 비공개입니다.*
+
+- Service: [SENTRA 시연](https://sentra.koreacentral.cloudapp.azure.com/)
+- GitHub: [mingming-01/sentra (비공개)](https://github.com/mingming-01/sentra)
+
 ### Maple Growth Tracker
 **개인 프로젝트 · 웹서비스**
 
@@ -49,8 +64,8 @@ AI를 활용한 개발 및 데이터 분석 프로젝트와 다양한 실습 과
 - Gemini API를 활용한 성장 데이터 분석
 - 실제 서비스 형태로 구현 및 배포
 
-**Service:** maple-growth-tracker.onrender.com  
-**GitHub:** github.com/mingming-01/maple-growth-tracker
+**Service:** [Maple Growth Tracker](https://maple-growth-tracker.onrender.com/)  
+**GitHub:** [mingming-01/maple-growth-tracker](https://github.com/mingming-01/maple-growth-tracker)
 
 ---
 
@@ -67,21 +82,40 @@ AI를 활용한 개발 및 데이터 분석 프로젝트와 다양한 실습 과
 - 분석 결과를 논문 형태로 정리
 - 재현 가능한 분석 구조 구성
 
-**Project:** mingming-01.github.io/typing-focus-research/
+**Project:** [연구 결과 페이지](https://mingming-01.github.io/typing-focus-research/)  
+**GitHub:** [mingming-01/typing-focus-research](https://github.com/mingming-01/typing-focus-research)
 
 ---
 
-### 나를 소개하는 한 페이지
-**SKT ALEPH 과제 8 · 개인 프로젝트**
+### BR-B · 타이핑 집중 환경 비교기
+**개인 프로젝트 · Task 10 연구 확장**
 
-개인 정보를 필요한 범위에서 공개하고 관리할 수 있도록 만든 개인 프로필 페이지입니다.
+Task 10에서 다룬 시각 효과의 ON/OFF 조건을 사용자가 직접 비교할 수 있도록 만든 웹 앱입니다.
 
-- 개인 프로필 및 프로젝트 정보 구성
-- Passkey 기반 인증 기능 구현
-- 공개 영역과 비공개 영역 분리
-- 웹페이지 구현 및 배포
+- 동일한 문장을 입력하는 조건별 테스트
+- 개인 타이핑 속도와 정확도 비교
+- 개인 테스트와 연구 결과를 구분해 표시
 
-**Service:** my-profile-ohhl.onrender.com
+**Service:** [BR-B 타이핑 집중 환경 비교기](https://mingming-01.github.io/typing-focus-app/)  
+**GitHub:** [mingming-01/typing-focus-app](https://github.com/mingming-01/typing-focus-app)
+
+---
+
+### Passkey Private Space
+**SKT ALEPH 과제 8에서 시작한 개인 프로젝트**
+
+개인 프로필 프로젝트를 WebAuthn 기반 Passkey 인증과 계정별 비공개 영역을 갖춘 서비스로 확장했습니다.
+
+- 계정별 일회용 초대 토큰을 통한 최초 Passkey 등록
+- WebAuthn Challenge, RP ID, Origin 검증
+- 로그인 세션 보안 및 인증 시도 제한
+- Passkey 추가·삭제 시 최근 인증 확인 및 마지막 Passkey 삭제 방지
+- 로컬 SQLite / 운영 PostgreSQL 분리
+- Render 배포 및 Supabase PostgreSQL 연결
+- 실제 브라우저에서 계정 분리와 등록·로그인 동작 검증
+
+**Service:** [Passkey Private Space](https://my-profile-ohhl.onrender.com/)  
+**GitHub:** [mingming-01/my-profile](https://github.com/mingming-01/my-profile)
 
 ---
 
@@ -95,7 +129,8 @@ AI를 활용한 개발 및 데이터 분석 프로젝트와 다양한 실습 과
 - 작업 후 회고 기록
 - 웹서비스 구현 및 배포
 
-**Service:** pds-diary-0u5g.onrender.com
+**Service:** [PDS Diary](https://pds-diary-0u5g.onrender.com/)  
+**GitHub:** [mingming-01/pds-diary](https://github.com/mingming-01/pds-diary)
 
 ---
 
@@ -114,7 +149,7 @@ QR/바코드를 활용해 상품과 재고를 관리하는 웹서비스를 제�
 
 *현재는 교육기관 제공 서버 운영 종료로 서비스 접속이 어렵습니다.*
 
-**GitHub:** github.com/in27sung/stock-mate
+**GitHub:** [in27sung/stock-mate](https://github.com/in27sung/stock-mate)
 
 ---
 
@@ -130,7 +165,7 @@ QR/바코드를 활용해 상품과 재고를 관리하는 웹서비스를 제�
 
 *현재는 교육기관 제공 서버 운영 종료로 서비스 접속이 어렵습니다.*
 
-**GitHub:** github.com/mingming-01/packtory_
+**GitHub:** [mingming-01/packtory_](https://github.com/mingming-01/packtory_)
 
 ---
 
@@ -147,7 +182,7 @@ QR/바코드를 활용해 상품과 재고를 관리하는 웹서비스를 제�
 
 *현재는 교육기관 제공 서버 운영 종료로 서비스 접속이 어렵습니다.*
 
-**GitHub:** github.com/shoqying/MrBean
+**GitHub:** [shoqying/MrBean](https://github.com/shoqying/MrBean)
 
 ---
 
@@ -159,7 +194,7 @@ SKT K-뉴딜 ALEPH 1기에서 다양한 개발 및 데이터 활용 과제를 �
 - Weather Board — 날씨 정보 활용 웹페이지 구현
 - Card Studio — 카드/콘텐츠 제작 서비스 구현
 - PDS Diary — 계획·실행·회고 기록 서비스 구현
-- 나를 소개하는 한 페이지 — 개인 프로필 페이지 및 Passkey 인증 구현
+- Passkey Private Space — WebAuthn 인증 및 PostgreSQL 운영 저장소 적용
 - 과제 10 — 타이핑 실험 및 데이터 분석
 - 그 외 AI 활용 개발 및 실습 과제 수행
 

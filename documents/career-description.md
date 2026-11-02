@@ -50,7 +50,7 @@ QR/바코드를 활용해 상품과 재고를 관리할 수 있도록 만든 웹
 
 *현재는 교육기관 제공 서버 운영 종료로 서비스 접속이 어렵습니다.*
 
-**GitHub:** github.com/in27sung/stock-mate
+**GitHub:** [in27sung/stock-mate](https://github.com/in27sung/stock-mate)
 
 ---
 
@@ -76,7 +76,7 @@ QR/바코드를 활용해 상품과 재고를 관리할 수 있도록 만든 웹
 
 *현재는 교육기관 제공 서버 운영 종료로 서비스 접속이 어렵습니다.*
 
-**GitHub:** github.com/mingming-01/packtory_
+**GitHub:** [mingming-01/packtory_](https://github.com/mingming-01/packtory_)
 
 ---
 
@@ -103,7 +103,7 @@ QR/바코드를 활용해 상품과 재고를 관리할 수 있도록 만든 웹
 
 *현재는 교육기관 제공 서버 운영 종료로 서비스 접속이 어렵습니다.*
 
-**GitHub:** github.com/shoqying/MrBean
+**GitHub:** [shoqying/MrBean](https://github.com/shoqying/MrBean)
 
 ---
 
@@ -132,31 +132,38 @@ QR/바코드를 활용해 상품과 재고를 관리할 수 있도록 만든 웹
 
 관심 있는 주제에서 필요한 기능을 직접 정하고 서비스를 구현했습니다. 개발 환경에서 실행되는 결과물에 그치지 않고 실제로 사용할 수 있는 형태까지 만들고 배포하면서 아이디어를 서비스로 연결하는 경험을 쌓았습니다.
 
-**Service:** maple-growth-tracker.onrender.com  
-**GitHub:** github.com/mingming-01/maple-growth-tracker
+**Service:** [Maple Growth Tracker](https://maple-growth-tracker.onrender.com/)  
+**GitHub:** [mingming-01/maple-growth-tracker](https://github.com/mingming-01/maple-growth-tracker)
 
 ---
 
-## 6. 나를 소개하는 한 페이지
+## 6. Passkey Private Space
 
-**구분:** SKT K-뉴딜 ALEPH 과제 8 · 개인 프로젝트
+**구분:** SKT K-뉴딜 ALEPH 과제 8에서 시작한 개인 프로젝트  
+**형태:** Flask 웹 애플리케이션 · Render 배포
 
 ### 프로젝트 개요
 
-개인 프로필과 프로젝트 정보를 정리하고 필요한 정보만 공개할 수 있도록 만든 개인 웹페이지입니다.
+개인 프로필 프로젝트를 WebAuthn 기반 Passkey 인증과 계정별 비공개 영역을 제공하는 서비스로 확장했습니다. 계정별 최초 등록을 초대 토큰으로 제한하고, 등록·로그인·Passkey 관리 과정의 인증 상태를 서버에서 검증하도록 구성했습니다.
 
 ### 주요 구현 경험
 
-- 개인 프로필 및 프로젝트 정보 구성
-- 공개 영역과 비공개 영역 분리
-- Passkey 기반 인증 기능 구현
-- 웹페이지 구현 및 배포
+- Flask 앱 구성 및 운영 환경 설정
+- 계정별 일회용 초대 토큰 검증
+- WebAuthn 등록·인증 Challenge 생성, 만료 및 1회 소비 처리
+- RP ID와 Origin 검증
+- 로그인 세션 초기화 및 쿠키 보안 설정
+- 로그인·등록 요청 제한과 보안 응답 헤더 적용
+- Passkey 추가·삭제 시 최근 인증 확인 및 마지막 Passkey 삭제 방지
+- 로컬 SQLite / 운영 PostgreSQL 데이터베이스 분리
+- Supabase PostgreSQL 연결 및 Render 배포
 
 ### 결과 및 경험
 
-단순한 자기소개 페이지를 만드는 데서 그치지 않고 공개할 정보와 보호할 정보를 구분하고, Passkey를 활용한 인증 기능을 구현했습니다. 개인 정보를 어떻게 공개할 것인지 직접 고민하고 서비스에 적용하는 경험을 했습니다.
+로컬 개발 환경에서는 SQLite를 사용하고, 운영 환경에서는 Supabase PostgreSQL을 사용하도록 구성했습니다. 실제 브라우저에서 계정별 Passkey 등록과 로그인을 확인하고, 계정 간 비공개 영역 분리 및 마지막 Passkey 삭제 방지 동작을 검증했습니다.
 
-**Service:** my-profile-ohhl.onrender.com
+**Service:** [Passkey Private Space](https://my-profile-ohhl.onrender.com/)  
+**GitHub:** [mingming-01/my-profile](https://github.com/mingming-01/my-profile)
 
 ---
 
@@ -179,7 +186,8 @@ QR/바코드를 활용해 상품과 재고를 관리할 수 있도록 만든 웹
 
 개인적으로 반복해서 사용할 수 있는 기록 방식을 서비스 형태로 구현했습니다. 단순히 기능을 만드는 것보다 실제 사용 목적을 기준으로 화면과 기능을 구성하는 경험을 했습니다.
 
-**Service:** pds-diary-0u5g.onrender.com
+**Service:** [PDS Diary](https://pds-diary-0u5g.onrender.com/)  
+**GitHub:** [mingming-01/pds-diary](https://github.com/mingming-01/pds-diary)
 
 ---
 
@@ -210,11 +218,40 @@ QR/바코드를 활용해 상품과 재고를 관리할 수 있도록 만든 웹
 
 가설에 결과를 맞추기보다 실제 데이터를 기준으로 결론을 정리하면서, 예상한 답보다 직접 확인한 결과를 바탕으로 판단하는 것이 중요하다는 것을 경험했습니다.
 
-**Project:** mingming-01.github.io/typing-focus-research/
+**Project:** [연구 결과 페이지](https://mingming-01.github.io/typing-focus-research/)  
+**GitHub:** [mingming-01/typing-focus-research](https://github.com/mingming-01/typing-focus-research)
 
 ---
 
-## 9. SKT K-뉴딜 ALEPH 1기
+## 9. SENTRA · 사내망 다계층 접근통제 시스템
+
+**구분:** 팀 캡스톤 프로젝트  
+**담당:** 백엔드 개발
+
+### 프로젝트 개요
+
+사내 사용자와 자원에 대한 접근을 역할·부서·개인 단위로 통제하고, 접근 허용·거부 결과를 감사 로그로 관리하는 사내망 접근통제 시스템입니다.
+
+### 주요 구현 경험
+
+- Flask 기반 백엔드 API 구현 및 프런트엔드 연동
+- PBKDF2 기반 로그인 비밀번호 해시 처리 및 인증 토큰 반환
+- SQLite 데이터베이스 설계와 마이페이지 데이터 연동
+- 부서별·개인별 접근 정책 요구사항 검토 및 정책 판정 흐름 협업
+- API 요청부터 인증·정책 판정·로그 기록으로 이어지는 흐름 확인
+
+### 결과 및 경험
+
+인증, 데이터베이스, API가 하나의 서비스 흐름으로 연결되는 과정을 경험했습니다. 담당 기능을 구현하는 데 그치지 않고 실제 시연 흐름에서 각 구성 요소가 함께 동작하는지 확인하며 팀 결과물을 완성했습니다.
+
+팀 프로젝트이며 소스 저장소는 비공개입니다.
+
+**Service:** [SENTRA 시연](https://sentra.koreacentral.cloudapp.azure.com/)  
+**GitHub:** [mingming-01/sentra (비공개)](https://github.com/mingming-01/sentra)
+
+---
+
+## 10. SKT K-뉴딜 ALEPH 1기
 
 **기간:** 2026.08 ~ 2026.11  
 **구분:** AI 활용 개발 및 데이터 분석 교육
@@ -251,7 +288,7 @@ AI를 활용한 개발, 데이터 분석 및 다양한 실습 과제를 수행�
 
 ---
 
-## 10. 종합 역량
+## 11. 종합 역량
 
 ### 문제 해결
 
@@ -275,7 +312,7 @@ AI를 활용한 개발, 데이터 분석 및 다양한 실습 과제를 수행�
 
 ---
 
-## 11. 지원 직무
+## 12. 지원 직무
 
 소프트웨어 개발을 중심으로 경험을 쌓고 있으며 다음과 같은 직무에 관심을 가지고 있습니다.
 

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>허민 | Portfolio</title>
+    <title>허민 | Backend & Security Portfolio</title>
 
     <meta
         name="description"
-        content="궁금한 것을 파고들어 의미를 발견하고, 사람들과 함께 앞으로 나아가는 사람. 허민의 포트폴리오입니다."
+        content="반도체 전공을 바탕으로 백엔드 개발, 접근통제, Passkey 인증 서비스를 구현하고 검증해 온 허민의 포트폴리오입니다."
     >
 
     <link rel="stylesheet" href="css/style.css">
@@ -16,6 +16,7 @@
 </head>
 
 <body>
+<a class="skip-link" href="#main-content">본문 바로가기</a>
 
 <header class="header">
     <div class="header-inner">
@@ -25,12 +26,13 @@
             <a href="#about">ABOUT</a>
             <a href="#records">RECORDS</a>
             <a href="#works">WORKS</a>
+            <a href="#stack">STACK</a>
             <a href="#device">DEVICE</a>
         </nav>
     </div>
 </header>
 
-<main>
+<main id="main-content">
 
     <!-- HERO -->
     <section class="hero">
@@ -54,9 +56,9 @@
                 </p>
 
                 <div class="hero-tags">
-                    <span>SOFTWARE</span>
-                    <span>DATA</span>
-                    <span>SEMICONDUCTOR</span>
+                    <span>BACKEND</span>
+                    <span>SECURITY</span>
+                    <span>MANUFACTURING IT</span>
                 </div>
             </div>
         </div>
@@ -186,13 +188,30 @@
                         내가 필요해서 시작한 것을 실제로 사용할 수 있는 형태까지 만들어 보면서
                         작은 아이디어도 직접 결과로 만들어 보는 경험을 쌓았습니다.
                     </p>
+
+                    <p>
+                        팀 캡스톤 프로젝트 SENTRA에서는 사내망 다계층 접근통제 시스템을 개발했습니다.
+                        저는 Flask 백엔드 API와 로그인 인증, SQLite 데이터베이스 설계 및 마이페이지 연동을 담당했습니다.
+                        부서와 개인별 접근 정책을 구분하고, 요청에 대한 허용·거부 결과가 감사 로그로 이어지는 구조를
+                        팀원들과 함께 구체화하며 실제 조직에서 사용할 접근통제 흐름을 고민했습니다.
+                    </p>
+
+                    <p>
+                        별도로 진행한 Passkey Private Space 프로젝트에서는 WebAuthn 기반 인증을 구현했습니다.
+                        계정별 초대 코드, Challenge 검증, 세션 보안, Passkey 관리 기능을 적용하고,
+                        로컬 SQLite와 운영 PostgreSQL을 분리해 Render와 Supabase에 배포했습니다.
+                        실제 브라우저에서 계정별 인증과 데이터 분리를 확인하면서 보안 기능은 구현뿐 아니라
+                        운영 환경에서 검증하는 과정까지 중요하다는 것을 배웠습니다.
+                    </p>
                 </div>
             </article>
 
-            <!-- ABOUT FINAL -->
-            <article class="story-final">
+            <!-- STORY 04 -->
+            <article class="story-item story-final">
+                <span class="story-number">04</span>
+
                 <div>
-                    <h4>정리</h4>
+                    <h4>앞으로 이어가고 싶은 방향</h4>
 
                     <p>
                         돌아보면 처음부터 개발자를 목표로 정해 놓고 온 길은 아니었습니다.
@@ -265,35 +284,35 @@
             </h3>
 
             <p>
-                13주 동안의 기록을 통해
-                제가 과제를 어떻게 이어갔는지 확인할 수 있습니다.
+                SKT ALEPH 활동 중 실제로 작성한 리추얼 기록을 집계했습니다.
+                기록 기간과 집계 기준을 함께 공개해 숫자의 출처를 확인할 수 있도록 했습니다.
             </p>
         </div>
 
         <div class="record-grid">
 
             <div class="record-item">
-                <strong>13<span>주</span></strong>
-                <p>기록 기간</p>
-                <small>SKT ALEPH · 13주 활동 기록</small>
-            </div>
-
-            <div class="record-item">
                 <strong id="record-total">-</strong>
                 <p>기록한 날</p>
-                <small>2026.08.11 ~ 2026.10.06 · 리추얼 기록</small>
+                <small>날짜가 확인된 리추얼</small>
             </div>
 
             <div class="record-item">
-                <strong id="record-types">-</strong>
-                <p>확인한 능력</p>
-                <small>자기조절력 · 대인관계력 · 자기동기력</small>
+                <strong id="record-practiced">-</strong>
+                <p>실천했다</p>
+                <small>마감 기록의 자기평가</small>
+            </div>
+
+            <div class="record-item">
+                <strong id="record-partial">-</strong>
+                <p>일부 실천했다</p>
+                <small>마감 기록의 자기평가</small>
             </div>
 
         </div>
 
-        <p class="record-note">
-            현재 장치에 등록된 기록 기준입니다.
+        <p class="record-note" id="record-note">
+            집계 범위: 2026.08.11 ~ 2026.11.02 · 마감 기록 52일 · 11월 2일 진행 중
         </p>
 
     </section>
@@ -311,6 +330,61 @@
 
             <article class="work">
                 <div class="work-meta">
+                    <span>SENTRA</span>
+                    <span>TEAM CAPSTONE · 2026</span>
+                </div>
+
+                <div class="work-main">
+                    <h3>사내망 다계층 접근통제 시스템</h3>
+
+                    <p>
+                        사내 사용자와 자원에 대한 접근을 역할·부서·개인 단위로 통제하고,
+                        요청 결과를 감사 로그로 관리하는 팀 캡스톤 프로젝트입니다.
+                        Flask 백엔드 API, 로그인 인증, SQLite 데이터베이스 설계 및 마이페이지 연동을 담당했습니다.
+                    </p>
+
+                    <p class="work-stack">
+                        Flask · Python · SQLite · REST API
+                    </p>
+
+                    <div class="work-links">
+                        <a href="https://sentra.koreacentral.cloudapp.azure.com/" target="_blank" rel="noopener noreferrer">서비스 시연 ↗</a>
+                        <a href="https://github.com/mingming-01/sentra" target="_blank" rel="noopener noreferrer">GitHub 저장소 (비공개) ↗</a>
+                    </div>
+                    <span class="work-note">팀 프로젝트 · 저장소는 권한이 있는 사용자만 열람 가능</span>
+                </div>
+            </article>
+
+            <article class="work">
+                <div class="work-meta">
+                    <span>PERSONAL</span>
+                    <span>WEB SECURITY · 2026</span>
+                </div>
+
+                <div class="work-main">
+                    <h3>Passkey Private Space</h3>
+
+                    <p>
+                        WebAuthn 기반 Passkey 인증과 계정별 비공개 영역을 구현한 개인 프로젝트입니다.
+                        일회용 초대 코드, Challenge 검증, 세션 보안, Passkey 관리와
+                        PostgreSQL 기반 운영 데이터 저장을 적용했습니다.
+                    </p>
+
+                    <p class="work-stack">
+                        Flask · WebAuthn · PostgreSQL · Supabase · SQLite · Render
+                    </p>
+
+                    <span class="work-note">학습·시연용 샘플 데이터 사용 · 실제 민감정보 보관 서비스가 아님</span>
+
+                    <div class="work-links">
+                        <a href="https://my-profile-ohhl.onrender.com/" target="_blank" rel="noopener noreferrer">서비스 보기 ↗</a>
+                        <a href="https://github.com/mingming-01/my-profile" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="work">
+                <div class="work-meta">
                     <span>T10</span>
                     <span>RESEARCH · 2026</span>
                 </div>
@@ -325,16 +399,13 @@
                         시각적 효과의 ON/OFF 조건을 비교하여
                         타이핑 성능의 차이를 확인한 연구 프로젝트입니다.
                         직접 데이터를 수집하고 분석하여
-                        가설을 검증했습니다.
+                        가설과 실제 결과를 비교하고 결론을 정리했습니다.
                     </p>
 
-                    <a
-                        href="https://mingming-01.github.io/typing-focus-research/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        프로젝트 보기 ↗
-                    </a>
+                    <div class="work-links">
+                        <a href="https://mingming-01.github.io/typing-focus-research/" target="_blank" rel="noopener noreferrer">연구 결과 보기 ↗</a>
+                        <a href="https://github.com/mingming-01/typing-focus-research" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                    </div>
                 </div>
             </article>
 
@@ -355,13 +426,10 @@
                         실제로 사용할 수 있는 형태까지 구현하고 배포했습니다.
                     </p>
 
-                    <a
-                        href="https://maple-growth-tracker.onrender.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        서비스 보기 ↗
-                    </a>
+                    <div class="work-links">
+                        <a href="https://maple-growth-tracker.onrender.com/" target="_blank" rel="noopener noreferrer">서비스 보기 ↗</a>
+                        <a href="https://github.com/mingming-01/maple-growth-tracker" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                    </div>
                 </div>
             </article>
 
@@ -380,16 +448,85 @@
                         자신의 속도와 정확도를 비교할 수 있도록 만든 웹 앱입니다.
                     </p>
 
-                    <a
-                        href="https://mingming-01.github.io/typing-focus-app/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        앱 실행 ↗
-                    </a>
+                    <div class="work-links">
+                        <a href="https://mingming-01.github.io/typing-focus-app/" target="_blank" rel="noopener noreferrer">앱 실행 ↗</a>
+                        <a href="https://github.com/mingming-01/typing-focus-app" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                    </div>
                 </div>
             </article>
 
+            <article class="work">
+                <div class="work-meta">
+                    <span>PERSONAL</span>
+                    <span>PRODUCTIVITY · 2026</span>
+                </div>
+
+                <div class="work-main">
+                    <h3>PDS Diary</h3>
+
+                    <p>
+                        계획(PLAN), 실행(DO), 회고(SEE)를 한 흐름으로 기록할 수 있도록 만든
+                        개인 관리 서비스입니다. 해야 할 일을 정리하고 실행한 뒤,
+                        하루의 결과를 돌아볼 수 있도록 구성했습니다.
+                    </p>
+
+                    <p class="work-stack">
+                        Web Service · PLAN / DO / SEE
+                    </p>
+
+                    <div class="work-links">
+                        <a href="https://pds-diary-0u5g.onrender.com/" target="_blank" rel="noopener noreferrer">서비스 보기 ↗</a>
+                        <a href="https://github.com/mingming-01/pds-diary" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- STACK -->
+    <section class="stack" id="stack">
+
+        <div class="section-title">
+            <span>04</span>
+            <h2>Project Stack</h2>
+        </div>
+
+        <div class="stack-intro">
+            <h3>기술 이름보다 중요한 것은<br>어떤 문제에 적용했는지입니다.</h3>
+            <p>아래 기술은 학습 및 프로젝트에서 접한 환경을 정리한 것입니다. 일부는 팀 프로젝트 전체의 기술 환경이며, 개인 담당 범위는 각 프로젝트 설명에서 구분했습니다. 숙련도를 임의의 점수로 표현하지 않고 실제 적용 사례를 함께 제공합니다.</p>
+        </div>
+
+        <div class="stack-grid">
+            <article class="stack-card">
+                <span>01 · BACKEND</span>
+                <h3>서버 개발</h3>
+                <p>Java · Python · Flask · REST API</p>
+                <small>아이티윌 팀 프로젝트 · SENTRA · Passkey Private Space · Maple Growth Tracker</small>
+            </article>
+
+            <article class="stack-card">
+                <span>02 · FRONTEND</span>
+                <h3>웹 화면 구현</h3>
+                <p>JavaScript · HTML · CSS · React · TypeScript</p>
+                <small>개인 웹 프로젝트 · SENTRA 팀 프로젝트</small>
+            </article>
+
+            <article class="stack-card">
+                <span>03 · DATABASE</span>
+                <h3>데이터 저장</h3>
+                <p>SQLite · PostgreSQL · Supabase</p>
+                <small>SENTRA · Passkey Private Space · Maple Growth Tracker</small>
+            </article>
+
+            <article class="stack-card">
+                <span>04 · SECURITY & OPERATIONS</span>
+                <h3>인증 및 배포 환경</h3>
+                <p>WebAuthn · Git · GitHub · Linux</p>
+                <small>Passkey Private Space · SENTRA · 개인 프로젝트 배포</small>
+            </article>
         </div>
 
     </section>
@@ -399,7 +536,7 @@
     <section class="documents">
 
         <div class="section-title">
-            <span>04</span>
+            <span>05</span>
             <h2>Documents</h2>
         </div>
 
@@ -450,7 +587,7 @@
     <section class="device" id="device">
 
         <div class="section-title dark">
-            <span>05</span>
+            <span>06</span>
             <h2>Continuing Device</h2>
         </div>
 
