@@ -1,6 +1,6 @@
 async function loadRecordsStats() {
     try {
-        const response = await fetch("device/output/stats.json");
+        const response = await fetch("device/output/stats.json", { cache: "no-store" });
 
         if (!response.ok) {
             throw new Error("stats.json을 불러올 수 없습니다.");
