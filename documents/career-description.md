@@ -132,8 +132,8 @@ QR/바코드를 활용해 상품과 재고를 관리할 수 있도록 만든 웹
 
 관심 있는 주제에서 필요한 기능을 직접 정하고 서비스를 구현했습니다. 개발 환경에서 실행되는 결과물에 그치지 않고 실제로 사용할 수 있는 형태까지 만들고 배포하면서 아이디어를 서비스로 연결하는 경험을 쌓았습니다.
 
-**Service:** maple-growth-tracker.onrender.com  
-**GitHub:** github.com/mingming-01/maple-growth-tracker
+**Service:** [Maple Growth Tracker](https://maple-growth-tracker.onrender.com/)  
+**GitHub:** [mingming-01/maple-growth-tracker](https://github.com/mingming-01/maple-growth-tracker)
 
 ---
 
@@ -162,8 +162,8 @@ QR/바코드를 활용해 상품과 재고를 관리할 수 있도록 만든 웹
 
 로컬 개발 환경에서는 SQLite를 사용하고, 운영 환경에서는 Supabase PostgreSQL을 사용하도록 구성했습니다. 실제 브라우저에서 계정별 Passkey 등록과 로그인을 확인하고, 계정 간 비공개 영역 분리 및 마지막 Passkey 삭제 방지 동작을 검증했습니다.
 
-**Service:** https://my-profile-ohhl.onrender.com/  
-**GitHub:** https://github.com/mingming-01/my-profile
+**Service:** [Passkey Private Space](https://my-profile-ohhl.onrender.com/)  
+**GitHub:** [mingming-01/my-profile](https://github.com/mingming-01/my-profile)
 
 ---
 
@@ -186,7 +186,8 @@ QR/바코드를 활용해 상품과 재고를 관리할 수 있도록 만든 웹
 
 개인적으로 반복해서 사용할 수 있는 기록 방식을 서비스 형태로 구현했습니다. 단순히 기능을 만드는 것보다 실제 사용 목적을 기준으로 화면과 기능을 구성하는 경험을 했습니다.
 
-**Service:** pds-diary-0u5g.onrender.com
+**Service:** [PDS Diary](https://pds-diary-0u5g.onrender.com/)  
+**GitHub:** [mingming-01/pds-diary](https://github.com/mingming-01/pds-diary)
 
 ---
 
@@ -217,7 +218,8 @@ QR/바코드를 활용해 상품과 재고를 관리할 수 있도록 만든 웹
 
 가설에 결과를 맞추기보다 실제 데이터를 기준으로 결론을 정리하면서, 예상한 답보다 직접 확인한 결과를 바탕으로 판단하는 것이 중요하다는 것을 경험했습니다.
 
-**Project:** mingming-01.github.io/typing-focus-research/
+**Project:** [연구 결과 페이지](https://mingming-01.github.io/typing-focus-research/)  
+**GitHub:** [mingming-01/typing-focus-research](https://github.com/mingming-01/typing-focus-research)
 
 ---
 
@@ -244,6 +246,9 @@ QR/바코드를 활용해 상품과 재고를 관리할 수 있도록 만든 웹
 인증, 데이터베이스, API, 웹 서버 구성이 하나의 서비스로 연결되는 과정을 경험했습니다. 담당 기능을 구현하는 데 그치지 않고 실제 시연 흐름에서 각 구성 요소가 함께 동작하는지 확인하며 팀 결과물을 완성했습니다.
 
 팀 프로젝트이며 소스 저장소는 비공개입니다.
+
+**Service:** [SENTRA 시연](https://sentra.koreacentral.cloudapp.azure.com/)  
+**GitHub:** [mingming-01/sentra (비공개)](https://github.com/mingming-01/sentra)
 
 ---
 
