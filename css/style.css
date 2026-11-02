@@ -1186,3 +1186,34 @@ a:focus-visible {
     font-size: 11px;
     line-height: 1.7;
 }
+
+
+@media (max-width: 768px) {
+    .stack {
+        padding: 80px 0;
+    }
+
+    .stack-intro {
+        display: block;
+        margin-bottom: 35px;
+    }
+
+    .stack-intro h3 {
+        font-size: 28px;
+    }
+
+    .stack-intro p {
+        width: auto;
+        margin-top: 22px;
+    }
+
+    .stack-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .stack-card {
+        min-height: auto;
+        padding: 24px;
+    }
+}
