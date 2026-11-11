@@ -23,9 +23,9 @@
 | 섹션 | 내용 |
 |---|---|
 | Hero | 개발 방향, 주력 기술, 대표 프로젝트와 문서 링크 |
-| About me | 반도체 전공에서 소프트웨어 개발로 방향을 정한 과정과 프로젝트 경험 |
-| Records | ALEPH 리추얼 기록의 확인된 집계 |
-| Works | 대표 프로젝트 3개와 기타 개인·팀 프로젝트 |
+| About me | 반도체 전공에서 소프트웨어 개발로 방향을 정한 과정 |
+| Works | 대표 프로젝트 3개, ALEPH 보안 과제와 보조 프로젝트 |
+| Records | 리추얼 기록의 집계 절차와 공개 기준 (수치 재검증 중) |
 | Project Stack | 기술을 실제 적용한 프로젝트와 연결해 소개 |
 | Documents | 이력서·자기소개서·경력기술서 PDF |
 | Continuing Device | Python으로 기록을 집계하고 공개 내용을 선택하는 자동화 흐름 |
@@ -40,7 +40,7 @@
 - 저장소: https://github.com/mingming-01/maple-growth-tracker
 - 담당: 기획, 화면·서버 개발, 데이터 저장 구조, 외부 API 연동, 배포
 
-캐릭터 조회 API는 현재 상태를 보여 주는 데 집중되어 있어, 시간에 따른 성장을 보려면 과거 데이터를 직접 수집하고 보관해야 했습니다. NEXON Open API의 캐릭터 정보를 날짜별로 저장해 성장 추이, 캐릭터 비교, 상세 정보, AI 리포트를 제공하도록 만들었습니다.
+캐릭터 조회 API는 현재 상태를 보여 주는 데 집중되어 있어, 시간에 따른 성장을 보려면 과거 데이터를 직접 수집하고 보관해야 했습니다. NEXON Open API의 캐릭터 정보를 날짜별로 저장해 성장 추이, 캐릭터 비교, 상세 정보, AI 리포트를 제공하도록 만들었습니다. 배포 후 지인 10명 내외가 사용했고, 받은 피드백과 건의사항 중 서비스 방향에 맞는 내용을 일부 반영해 개선했습니다.
 
 **구현한 내용**
 - Flask API와 React 19 화면을 분리하고 Vite 기반 프런트엔드 개발 환경 구성
@@ -68,7 +68,8 @@
 - 서비스 시연: https://sentra.koreacentral.cloudapp.azure.com/
 - 저장소: https://github.com/mingming-01/sentra (비공개)
 - 형태: ALEPH 1기 3인 팀 캡스톤
-- 담당: Flask 서버 백엔드, 인증·직원 데이터·권한 요청 처리, 화면 API 연결
+- 역할 분담: 조장은 Azure 서버·아키텍처·프론트엔드·챗봇, 다른 팀원은 네트워크 가상망·Packet Tracer, 본인은 Flask 서버 백엔드
+- 담당: 인증·직원 데이터·권한 요청 처리, 화면과 API의 요청·응답 규격 조율
 
 직원의 역할과 소속, 개인별 권한에 따라 사내 자원 접근을 허용하거나 거부하는 시스템입니다. 저는 서버 백엔드를 맡아 계정 생성부터 접근 권한의 요청·승인·만료·회수까지 이어지는 흐름을 구현했습니다.
 
@@ -78,13 +79,13 @@
 - 초대 코드 재사용 방지 및 비활성 계정의 로그인·보호 API 접근 차단
 - 직원 및 사용자 데이터 저장 구조와 마이페이지 연동
 - 기간제 권한 요청, 운영자 승인·반려, 승인 권한 만료·회수 처리
-- React/TypeScript 화면과 Flask API 요청·응답 연결
+- React 기반 팀 화면과 Flask API의 요청·응답 규격 조율 (TypeScript는 조장 담당 화면의 기술 환경)
 - 담당 기능의 요구사항 정의, DB 스키마, 플로우차트 작성
 
 **검증한 시나리오**
 직원 사전 등록과 초대 가입, 사용한 초대 코드 재사용 거부, 비활성 계정 차단, 권한 요청·승인·회수 후 접근 결과를 실행해 확인했습니다. 화면에서 메뉴를 숨기는 것만으로 접근을 통제하지 않고 서버가 요청마다 인증과 정책을 판단하도록 구성했습니다.
 
-**기술:** 개인 담당 범위는 Python, Flask, PyJWT, SQLite이며 팀 화면은 React, TypeScript입니다.
+**기술:** 개인 담당 범위는 Python, Flask, PyJWT, SQLite입니다. React·TypeScript는 조장이 담당한 팀 화면의 기술 환경이며 개인 담당 기술과 구분합니다.
 
 네트워크 가상망·Packet Tracer, Syslog/NetFlow 수집, Discord 알림 등은 팀의 별도 담당 영역 또는 별도 환경에서 확인할 범위로 구분합니다.
 
@@ -96,7 +97,7 @@
 - 기간: 2025.03 ~ 2025.05
 - 형태: ITWill 심화 과정 팀 프로젝트
 
-기존 공통 구조를 이해한 뒤 여러 제조 업무 기능을 연결해 구현한 프로젝트입니다. 직원 등록·조회·수정·삭제, 부서·하위 부서와 직급 관리, Product 구조 정리, 원자재·창고·위치·입출고, 품질 기준·검사 이력, 근무 스케줄 기능을 작업했습니다.
+기존 공통 구조를 이해한 뒤 여러 제조 업무 기능을 연결해 구현한 프로젝트입니다. 프로젝트 중 팀원 한 명이 취업으로 이탈했고, 남은 팀원들과 팀 서버 시연까지 마쳤습니다. 직원 등록·조회·수정·삭제, 부서·하위 부서와 직급 관리, Product 구조 정리, 원자재·창고·위치·입출고, 품질 기준·검사 이력, 근무 스케줄 기능을 작업했습니다.
 
 **개발 과정에서 경험한 내용**
 - Controller, Service, DTO, Entity, Mapper와 Thymeleaf 화면을 함께 수정
@@ -111,11 +112,11 @@
 
 ## 기타 프로젝트
 
-- **My Profile:** 공개 프로필과 Task 8의 WebAuthn Passkey Private Space를 구현한 개인 프로젝트. 일회용 초대 코드, Challenge 및 RP ID·Origin 검증, 계정별 데이터 분리와 Passkey 관리 기능을 적용했습니다. 학습·시연용 프로토타입이며 실제 민감정보 보관 서비스가 아닙니다. [서비스](https://my-profile-ohhl.onrender.com/) · [GitHub](https://github.com/mingming-01/my-profile)
+- **My Profile:** ALEPH 과제로 공개 프로필과 WebAuthn Passkey Private Space를 구현한 프로젝트. 일회용 초대 코드, Challenge 및 RP ID·Origin 검증, 계정별 데이터 분리와 Passkey 관리 기능을 적용했습니다. 학습·시연용 프로토타입이며 실제 민감정보 보관 서비스가 아닙니다. [서비스](https://my-profile-ohhl.onrender.com/) · [GitHub](https://github.com/mingming-01/my-profile)
+- **ALEPH 보안 과제:** 보안 방어전 로그인·본인 자료 조회·등록 기기 판정·백업 복원 API, 방어전 결과를 확인하는 로컬 앱, XDR 웹 주입 탐지 판정 규칙을 수행했습니다.
 - **MrBean:** 원자재·완제품 CRUD, BOM 연결과 입력값 검증, 날짜 기반 LOT 번호 생성, 입고일 기준 유통기한 계산. Java 11, Spring MVC, MyBatis, MySQL, JSP. [GitHub](https://github.com/shoqying/MrBean)
 - **Stock-Mate:** QR·바코드 기반 상품·재고·창고 관리 프로젝트. 카테고리 CRUD와 SQL·화면 연결, 재고 목록 및 사용자 정보 수정 오류 등을 담당. Java 11, Spring MVC, MyBatis, MySQL, JSP, jQuery. [GitHub](https://github.com/in27sung/stock-mate)
-- **T10 타이핑 연구:** 시각 효과 ON/OFF 조건 각 15회, 총 30회 측정과 Python 분석. 표본이 작고 비교 결과가 일관되지 않아 관찰 범위 안에서 해석했습니다. [연구 결과](https://mingming-01.github.io/typing-focus-research/) · [GitHub](https://github.com/mingming-01/typing-focus-research)
-- **BR-B:** T10 연구를 바탕으로 개인 타이핑 속도와 정확도를 비교하는 웹 앱. [앱](https://mingming-01.github.io/typing-focus-app/) · [GitHub](https://github.com/mingming-01/typing-focus-app)
+- **T10 · BR-B:** 시각 효과 ON/OFF 조건 각 15회, 총 30회 측정과 Python 분석을 수행하고, 결과를 바탕으로 개인 타이핑 속도와 정확도를 비교하는 웹 앱을 만들었습니다. 표본이 작고 비교 결과가 일관되지 않아 관찰 범위 안에서 해석했습니다. [연구 결과](https://mingming-01.github.io/typing-focus-research/) · [비교 앱](https://mingming-01.github.io/typing-focus-app/)
 - **PDS Diary:** PLAN / DO / SEE 방식의 계획·실행·회고 서비스. 계획 변경 이력, 예상·실제 시간 비교, 데이터 내보내기와 자동 테스트 15개를 구현했습니다. [서비스](https://pds-diary-0u5g.onrender.com/) · [GitHub](https://github.com/mingming-01/pds-diary)
 
 ## 기술과 적용 경험
@@ -123,7 +124,8 @@
 | 영역 | 기술 | 적용 프로젝트 |
 |---|---|---|
 | Backend | Python, Flask, Java, Spring Boot, Spring MVC, REST API | Maple Growth Tracker, SENTRA, Packtory_DE, MrBean, Stock-Mate |
-| Frontend | JavaScript, TypeScript, React, HTML, CSS, Thymeleaf, JSP | Maple Growth Tracker, SENTRA, ITWill 팀 프로젝트 |
+| Frontend | JavaScript, React, HTML, CSS, Thymeleaf, JSP | Maple Growth Tracker, ITWill 팀 프로젝트 |
+| Team UI environment | TypeScript | SENTRA 팀 화면 (조장 담당, 개인 담당 기술과 구분) |
 | Database | PostgreSQL, SQLite, MySQL, JPA/Hibernate, MyBatis | Maple Growth Tracker, SENTRA, Packtory_DE |
 | Authentication & Integration | 비밀번호 해시, JWT, WebAuthn, NEXON Open API, Gemini, OpenRouter | SENTRA, My Profile, Maple Growth Tracker |
 | Test & Delivery | unittest, pytest, GitHub Actions, Git, Linux, Render, Vercel, GitHub Pages | 개인 서비스와 팀 프로젝트 |
@@ -133,14 +135,9 @@
 
 ## Records 집계 기준
 
-최신 자기소개서 기준의 확인된 집계값입니다.
+리추얼 기록은 Python으로 집계하고, 공개할 기록 후보는 직접 검토하는 방식으로 관리합니다. 다만 현재 BR-A의 요약 파일(61일, 2026-11-12 종료)과 날짜별 상세 기록(53건, 2026-11-02 마지막 기록)이 일치하지 않습니다. 최신 자기소개서에서도 해당 수치의 출처를 확인하지 못했습니다.
 
-- 기록 기간: **2026-08-11 ~ 2026-11-12**
-- 기록한 날: **61일**
-- '실천했다': **57일**
-- '일부 실천했다': **4일**
-
-날짜별 원문 회고는 공개하지 않고 확인된 합계만 표시합니다. 별도로 관리하는 대표 기록 후보 35건은 전체 기록 일수와 다른 자료이며, 역량별 분류(자기조절력 14건, 대인관계력 13건, 자기동기력 8건)는 해당 후보 35건에만 적용됩니다.
+따라서 **날짜별 원본과 요약 기준을 다시 대조하기 전까지 전체 기록 수와 실천 수치는 공개하지 않습니다.** 공개 후보 35건의 역량별 분포는 전체 기록 일수와 별개인 선별 자료이므로 전체 기록 통계처럼 사용하지 않습니다.
 
 ## 제출 문서와 자동 동기화
 
@@ -158,11 +155,11 @@
 
 ## Continuing Device
 
-`device/`에는 기록 후보와 집계 결과를 생성하는 Python 프로그램이 있습니다.
+`device/`에는 기록 후보와 집계 결과를 생성하는 Python 프로그램이 있습니다. [기록 집계 코드](https://github.com/mingming-01/br-a/tree/main/device)와 [문서 검증 workflow](https://github.com/mingming-01/br-a/blob/main/.github/workflows/auto-merge-career-documents.yml)를 공개합니다.
 
 - `device/src/generate.py`: `device/input/records.json`에서 공개 기록 후보 생성
 - `device/src/stats.py`: 확인된 최신 집계와 대표 기록 후보를 읽어 `device/output/stats.json` 생성
-- `device/input/ritual-summary.json`: 최신 자기소개서 기준의 확인된 합계
+- `device/input/ritual-summary.json`: 과거에 입력한 집계 요약. 날짜별 기록과 불일치가 확인되어 재검증 전까지 공개 수치의 근거로 사용하지 않음
 - `device/input/ritual-days.json`: 날짜별 상태를 보관한 상세 요약 자료
 - `device/output/`: 웹페이지에서 사용하는 결과 파일
 

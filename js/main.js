@@ -1,37 +1,48 @@
-async function loadRecordsStats() {
+async function verifyRecordsSource() {
+    const noteElement = document.getElementById("record-note");
+    if (!noteElement) return;
+
+    const pendingMessage =
+        "날짜별 기록과 집계 요약의 날짜·건수 차이를 확인해 공개 수치를 재검증하고 있습니다.";
+    noteElement.textContent = pendingMessage;
+
     try {
-        const response = await fetch("device/output/stats.json", { cache: "no-store" });
+        const [summaryResponse, daysResponse] = await Promise.all([
+            fetch("device/input/ritual-summary.json", { cache: "no-store" }),
+            fetch("device/input/ritual-days.json", { cache: "no-store" })
+        ]);
 
-        if (!response.ok) {
-            throw new Error("stats.json을 불러올 수 없습니다.");
+        if (!summaryResponse.ok || !daysResponse.ok) {
+            throw new Error("기록 원본 파일을 불러오지 못했습니다.");
         }
 
-        const stats = await response.json();
+        const [summary, days] = await Promise.all([
+            summaryResponse.json(),
+            daysResponse.json()
+        ]);
 
-        const totalElement = document.getElementById("record-total");
-        const practicedElement = document.getElementById("record-practiced");
-        const partialElement = document.getElementById("record-partial");
-        const noteElement = document.getElementById("record-note");
+        const dates = [...new Set(days.map((day) => day.date).filter(Boolean))].sort();
+        const completed = days.filter((day) => day.status === "completed");
+        const inProgress = days.filter((day) => day.status === "in_progress");
+        const practiced = completed.filter((day) => day.practice_status === "실천했다").length;
+        const partial = completed.filter((day) => day.practice_status === "일부 실천했다").length;
 
-        if (totalElement) {
-            totalElement.textContent = stats.total_days;
-        }
+        const isConsistent =
+            dates.length === summary.total_days &&
+            dates[0] === summary.period_start &&
+            dates[dates.length - 1] === summary.period_end &&
+            completed.length === summary.completed_days &&
+            inProgress.length === summary.in_progress_days &&
+            practiced === summary.practice_completed_days &&
+            partial === summary.practice_partial_days;
 
-        if (practicedElement) {
-            practicedElement.textContent = stats.practice_completed_days;
-        }
-
-        if (partialElement) {
-            partialElement.textContent = stats.practice_partial_days;
-        }
-
-        if (noteElement) {
-            noteElement.textContent =
-                `기록 기간: ${stats.period_start} ~ ${stats.period_end} · 기록 ${stats.total_days}일 · 실천 ${stats.practice_completed_days}일 · 일부 실천 ${stats.practice_partial_days}일`;
-        }
+        noteElement.textContent = isConsistent
+            ? "날짜별 기록과 집계 요약이 일치합니다. 공개 수치는 별도 검토 후 반영합니다."
+            : pendingMessage;
     } catch (error) {
-        console.error("기록 통계를 불러오지 못했습니다.", error);
+        noteElement.textContent = pendingMessage;
+        console.error("기록 집계의 일관성을 확인하지 못했습니다.", error);
     }
 }
 
-loadRecordsStats();
+verifyRecordsSource();

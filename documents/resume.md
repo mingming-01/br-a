@@ -5,7 +5,7 @@
 | 사진 | 3 x 4 cm |
 | 이름 | 허민 (HEO MIN) |
 | 지원 분야 | 신입 백엔드/웹서비스 개발 (MES, ERP, 제조 IT 포함) |
-| 연락처 | 010-0000-0000 |
+| 연락처 | 010-9340-8130 |
 | 이메일 | gjals0318@gmail.com |
 | 링크 | github.com/mingming-01 \| mingming-01.github.io/br-a |
 
