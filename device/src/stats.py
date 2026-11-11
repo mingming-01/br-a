@@ -43,6 +43,27 @@ def build_stats(records, ritual_days, summary=None):
         if totals["completed_days"] != totals["practice_completed_days"] + totals["practice_partial_days"]:
             raise ValueError("마감 기록 수와 실천 상태별 집계가 일치하지 않습니다.")
 
+        dates = sorted({day["date"] for day in ritual_days if day.get("date")})
+        completed = [day for day in ritual_days if day.get("status") == "completed"]
+        in_progress = [day for day in ritual_days if day.get("status") == "in_progress"]
+        practice_counts = Counter(
+            day["practice_status"] for day in completed if day.get("practice_status")
+        )
+        observed = {
+            "period_start": dates[0] if dates else None,
+            "period_end": dates[-1] if dates else None,
+            "total_days": len(dates),
+            "completed_days": len(completed),
+            "in_progress_days": len(in_progress),
+            "practice_completed_days": practice_counts.get("실천했다", 0),
+            "practice_partial_days": practice_counts.get("일부 실천했다", 0),
+        }
+        if totals != observed:
+            raise ValueError(
+                "집계 요약과 날짜별 기록이 일치하지 않습니다. "
+                f"summary={totals}, observed={observed}"
+            )
+
     categories = Counter(record["category"] for record in records if record.get("category"))
     return {
         **totals,
