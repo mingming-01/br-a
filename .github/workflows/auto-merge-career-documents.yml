@@ -1,0 +1,99 @@
+name: Validate and auto-merge career document sync
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: career-document-sync-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate-and-merge:
+    if: >-
+      github.event.pull_request.base.ref == 'main' &&
+      github.event.pull_request.head.ref == 'automation/sync-career-documents' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out proposed documents
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Verify changed files are limited to published documents
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          gh pr view "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --json files --jq '[.files[].path]' > changed-files.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          allowed = {
+              "documents/resume.md",
+              "documents/resume.pdf",
+              "documents/self-introduction.md",
+              "documents/self-introduction.pdf",
+              "documents/career-description.md",
+              "documents/career-description.pdf",
+          }
+          changed = json.loads(Path("changed-files.json").read_text())
+          if not changed:
+              raise SystemExit("No changed files were reported.")
+          unexpected = sorted(set(changed) - allowed)
+          if unexpected:
+              raise SystemExit(f"Unexpected changed files: {unexpected}")
+          print(f"Validated changed-file scope ({len(changed)} file(s)).")
+          PY
+
+      - name: Install PDF validation dependency
+        run: python -m pip install --disable-pip-version-check pypdf==5.1.0
+
+      - name: Validate all published Markdown and PDFs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from pypdf import PdfReader
+
+          documents = {
+              "resume": ("documents/resume.md", "documents/resume.pdf"),
+              "self-introduction": ("documents/self-introduction.md", "documents/self-introduction.pdf"),
+              "career-description": ("documents/career-description.md", "documents/career-description.pdf"),
+          }
+
+          for name, (markdown_name, pdf_name) in documents.items():
+              markdown = Path(markdown_name)
+              pdf = Path(pdf_name)
+
+              if not markdown.is_file() or len(markdown.read_text(encoding="utf-8").strip()) < 100:
+                  raise SystemExit(f"{name}: Markdown is missing or unexpectedly empty.")
+
+              if not pdf.is_file() or pdf.stat().st_size < 1000:
+                  raise SystemExit(f"{name}: PDF is missing or unexpectedly small.")
+
+              with pdf.open("rb") as stream:
+                  if stream.read(5) != b"%PDF-":
+                      raise SystemExit(f"{name}: invalid PDF signature.")
+
+              reader = PdfReader(str(pdf), strict=True)
+              if reader.is_encrypted or not reader.pages:
+                  raise SystemExit(f"{name}: PDF is encrypted or has no pages.")
+
+              extracted = "\n".join(page.extract_text() or "" for page in reader.pages)
+              if len("".join(extracted.split())) < 50:
+                  raise SystemExit(f"{name}: PDF contains too little extractable text.")
+
+              print(f"{name}: {len(reader.pages)} page(s), {len(extracted)} extracted characters.")
+          PY
+
+      - name: Squash-merge validated document PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: gh pr merge "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --squash --delete-branch
