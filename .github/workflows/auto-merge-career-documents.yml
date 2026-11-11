@@ -1,0 +1,149 @@
+name: Validate and auto-merge career documents
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: career-document-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate-and-merge:
+    # Only the dedicated document-sync PR created by the career-portfolio
+    # publishing workflow is eligible. All other PRs are ignored.
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.event.pull_request.base.ref == 'main' &&
+      github.event.pull_request.head.ref == 'automation/sync-career-documents' &&
+      github.event.pull_request.head.repo.full_name == 'mingming-01/br-a' &&
+      github.event.pull_request.user.login == 'mingming-01' &&
+      contains(github.event.pull_request.body, 'generated from the three approved Markdown and DOCX source files')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the exact PR revision
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+
+      - name: Install PDF validation tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+
+      - name: Validate changed-file scope and published documents
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # The PR may update any subset of the six published artifacts,
+          # but it must not modify site code, workflows, or unrelated files.
+          mapfile -t changed_files < <(
+            gh api --paginate \
+              "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}/files" \
+              --jq '.[].filename'
+          )
+
+          if (( ${#changed_files[@]} == 0 )); then
+            echo "::error::The PR contains no changed files."
+            exit 1
+          fi
+
+          for path in "${changed_files[@]}"; do
+            case "$path" in
+              documents/resume.md|documents/resume.pdf|\
+              documents/self-introduction.md|documents/self-introduction.pdf|\
+              documents/career-description.md|documents/career-description.pdf)
+                echo "Allowed document change: $path"
+                ;;
+              *)
+                echo "::error::Unexpected file in document-sync PR: $path"
+                exit 1
+                ;;
+            esac
+          done
+
+          # All six public artifacts must exist and contain usable content,
+          # even when an unchanged artifact is not part of this PR's diff.
+          for path in \
+            documents/resume.md \
+            documents/self-introduction.md \
+            documents/career-description.md; do
+            test -s "$path" || {
+              echo "::error::Missing or empty Markdown document: $path"
+              exit 1
+            }
+            grep -q '[^[:space:]]' "$path" || {
+              echo "::error::Markdown document has no readable content: $path"
+              exit 1
+            }
+            echo "Validated Markdown: $path"
+          done
+
+          for path in \
+            documents/resume.pdf \
+            documents/self-introduction.pdf \
+            documents/career-description.pdf; do
+            test -s "$path" || {
+              echo "::error::Missing or empty PDF: $path"
+              exit 1
+            }
+
+            if [[ "$(head -c 5 "$path")" != "%PDF-" ]]; then
+              echo "::error::Invalid PDF signature: $path"
+              exit 1
+            fi
+
+            pages="$(pdfinfo "$path" | awk '/^Pages:/ {print $2}')"
+            if [[ -z "$pages" || "$pages" -lt 1 ]]; then
+              echo "::error::PDF has no readable pages: $path"
+              exit 1
+            fi
+
+            extracted="$(mktemp)"
+            pdftotext -layout "$path" "$extracted"
+            if ! grep -q '[^[:space:]]' "$extracted"; then
+              echo "::error::PDF contains no extractable text: $path"
+              exit 1
+            fi
+            rm -f "$extracted"
+
+            echo "Validated PDF: $path ($pages pages, text extracted)"
+          done
+
+      - name: Confirm PR head has not changed
+        id: head
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          EXPECTED_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          actual_head_sha="$(gh pr view "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --json headRefOid --jq '.headRefOid')"
+          if [[ "$actual_head_sha" != "$EXPECTED_HEAD_SHA" ]]; then
+            echo "::error::PR head changed during validation. A new run is required."
+            exit 1
+          fi
+          echo "sha=$actual_head_sha" >> "$GITHUB_OUTPUT"
+
+      - name: Squash-merge the validated document PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          EXPECTED_HEAD_SHA: ${{ steps.head.outputs.sha }}
+        run: |
+          set -euo pipefail
+          gh pr merge "$PR_NUMBER" \
+            --repo "$GITHUB_REPOSITORY" \
+            --squash \
+            --delete-branch \
+            --match-head-commit "$EXPECTED_HEAD_SHA"
