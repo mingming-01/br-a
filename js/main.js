@@ -27,7 +27,7 @@ async function loadRecordsStats() {
 
         if (noteElement) {
             noteElement.textContent =
-                `집계 범위: ${stats.period_start} ~ ${stats.period_end} · 마감 기록 ${stats.completed_days}일 · 진행 중 ${stats.in_progress_days}일`;
+                `기록 기간: ${stats.period_start} ~ ${stats.period_end} · 기록 ${stats.total_days}일 · 실천 ${stats.practice_completed_days}일 · 일부 실천 ${stats.practice_partial_days}일`;
         }
     } catch (error) {
         console.error("기록 통계를 불러오지 못했습니다.", error);
