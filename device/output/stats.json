@@ -1,16 +1,16 @@
 {
   "period_start": "2026-08-11",
-  "period_end": "2026-11-02",
-  "total_days": 53,
-  "completed_days": 52,
-  "in_progress_days": 1,
-  "practice_completed_days": 48,
+  "period_end": "2026-11-12",
+  "total_days": 61,
+  "completed_days": 61,
+  "in_progress_days": 0,
+  "practice_completed_days": 57,
   "practice_partial_days": 4,
   "curated_record_count": 35,
   "curated_ability_count": 3,
   "curated_category_counts": {
     "자기조절력": 14,
-    "자기동기력": 8,
-    "대인관계력": 13
+    "대인관계력": 13,
+    "자기동기력": 8
   }
 }
