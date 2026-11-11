@@ -1,144 +1,188 @@
 # BR-A · Backend & Web Service Developer Portfolio
 
-반도체 전공을 바탕으로 백엔드와 웹서비스를 개발하고, 제조·업무 시스템과 연결되는 문제를 탐구하는 개인 포트폴리오입니다.
+반도체공학을 전공한 뒤 백엔드 개발을 공부하고, 개인·팀 프로젝트에서 웹서비스와 업무 시스템을 구현해 온 허민의 개발자 포트폴리오입니다.
 
-**공개 사이트:** https://mingming-01.github.io/br-a/
+**Portfolio:** https://mingming-01.github.io/br-a/  
+**GitHub:** https://github.com/mingming-01  
+**Contact:** gjals0318@gmail.com
 
-## 목적
+## 소개
 
-이 사이트는 이력서의 내용을 그대로 반복하기보다, 개발자로 방향을 정한 과정과 실제 프로젝트에서 맡은 역할, 문제를 해결하고 검증한 경험을 보여주기 위해 만들었습니다.
+현재 신입 백엔드·웹서비스 개발을 중심으로 취업을 준비하고 있으며, 반도체 전공과 제조 프로젝트 경험을 연결할 수 있는 MES·ERP·제조 IT 분야에도 관심이 있습니다.
 
-기존의 개인 소개와 기록을 유지하면서 대표 프로젝트의 기술적 내용과 담당 범위를 구체적으로 정리합니다. 팀 프로젝트는 전체 기능과 직접 구현한 범위를 구분하고, 학습·시연용 프로젝트는 그 한계를 함께 밝힙니다.
+프로젝트를 소개할 때 기술 목록만 나열하기보다 다음 내용을 구분해 기록합니다.
+
+- 해결하려고 한 문제와 서비스의 목적
+- 직접 담당해 구현한 기능과 팀 전체의 기술 환경
+- 구현 과정에서 고려한 데이터·인증·권한·실패 처리
+- 테스트하거나 실제 실행해 확인한 범위
+- 완료하지 못했거나 별도 환경에서 확인해야 하는 범위
 
 ## 사이트 구성
 
-- **Hero:** 백엔드·웹서비스 개발 지향점과 주력 기술, 프로젝트·문서 바로가기
-- **About me:** 반도체 전공에서 소프트웨어 개발로 방향을 찾은 과정, 교육과 협업 경험
-- **Records:** ALEPH 기간 중 작성한 리추얼 기록의 확인된 집계
-- **Works:** 대표 프로젝트와 기타 개인·팀 프로젝트
-- **Project Stack:** 실제 프로젝트에서 사용한 기술과 적용 영역
-- **Documents:** 이력서, 자기소개서, 경력기술서 PDF
-- **Continuing Device:** 기록을 정리하고 공개할 내용을 직접 선택하는 Python 자동화 장치
+| 섹션 | 내용 |
+|---|---|
+| Hero | 개발 방향, 주력 기술, 대표 프로젝트와 문서 링크 |
+| About me | 반도체 전공에서 소프트웨어 개발로 방향을 정한 과정과 프로젝트 경험 |
+| Records | ALEPH 리추얼 기록의 확인된 집계 |
+| Works | 대표 프로젝트 3개와 기타 개인·팀 프로젝트 |
+| Project Stack | 기술을 실제 적용한 프로젝트와 연결해 소개 |
+| Documents | 이력서·자기소개서·경력기술서 PDF |
+| Continuing Device | Python으로 기록을 집계하고 공개 내용을 선택하는 자동화 흐름 |
 
 ## 대표 프로젝트
 
 ### 01. Maple Growth Tracker
 
-NEXON Open API의 캐릭터 데이터를 날짜별로 저장하고 성장 추이, 캐릭터 비교, AI 성장 리포트를 제공하는 개인 웹서비스입니다.
+**공개 API 데이터를 날짜별로 축적하고 성장 흐름을 분석하는 개인 웹서비스**
 
-- 기획, 화면·서버 개발, 외부 API 연동, 데이터 저장 구조, 배포 담당
-- 정상 데이터, 미공개 날짜, 일시적인 API 오류를 구분해 기록 관리
-- 경험치와 랭킹 등 성장 지표는 별도 로직으로 계산하고 AI는 결과를 설명하도록 역할 분리
-- Gemini 우선 사용 및 조건에 따른 OpenRouter 대체
-- 자동 테스트와 GitHub Actions 검사 연결
-- 기술: Python, Flask, React 19, Vite, PostgreSQL, SQLite, NEXON Open API, Gemini, OpenRouter
 - 서비스: https://maple-growth-tracker.onrender.com/
-- GitHub: https://github.com/mingming-01/maple-growth-tracker
+- 저장소: https://github.com/mingming-01/maple-growth-tracker
+- 담당: 기획, 화면·서버 개발, 데이터 저장 구조, 외부 API 연동, 배포
+
+캐릭터 조회 API는 현재 상태를 보여 주는 데 집중되어 있어, 시간에 따른 성장을 보려면 과거 데이터를 직접 수집하고 보관해야 했습니다. NEXON Open API의 캐릭터 정보를 날짜별로 저장해 성장 추이, 캐릭터 비교, 상세 정보, AI 리포트를 제공하도록 만들었습니다.
+
+**구현한 내용**
+- Flask API와 React 19 화면을 분리하고 Vite 기반 프런트엔드 개발 환경 구성
+- 최근 7일 기록 수집과 30일·90일 과거 기록 보충, 10일 단위 요청 및 저장 데이터 재사용
+- 경험치 증가량, 일평균, 레벨 진행률, 랭킹 변화, 기간 비교와 타임라인 계산
+- 두 캐릭터의 동일 기간 성장 지표 비교와 AI 성장 리포트
+- 스탯·장비·심볼·스킬·링크·유니온 등 상세 정보를 탭 선택 시 개별 조회
+- PostgreSQL(배포)과 SQLite(로컬) 저장 환경 구성
+- Python 테스트, JavaScript 테스트, React 빌드 검사를 GitHub Actions에 연결
+
+**설계에서 고려한 점**
+- API가 아직 공개하지 않은 날짜, 아직 수집하지 않은 날짜, 일시적인 조회 오류를 구분합니다.
+- 정상적으로 저장된 과거 기록을 빈 응답이나 일시적 오류로 덮어쓰지 않습니다.
+- 기록이 없는 구간의 성장량을 0으로 간주하거나 임의로 보간하지 않습니다.
+- 성장 지표는 애플리케이션 로직에서 계산하고, AI는 계산된 값과 기록을 자연어로 설명합니다.
+- Gemini를 우선 사용하며 설정 및 오류 조건에 따라 OpenRouter를 대체 경로로 사용합니다.
+- 다음 레벨 예상은 계산 가능한 관측값이 충분할 때만 참고값으로 표시합니다.
+
+**기술:** Python, Flask, React 19, Vite, PostgreSQL, SQLite, Chart.js, NEXON Open API, Gemini API, OpenRouter, Render
 
 ### 02. SENTRA
 
-직원의 역할·소속·개인 권한에 따라 사내 자원 접근을 판정하는 3인 팀 캡스톤 프로젝트입니다. 서버 백엔드를 담당했습니다.
+**직원 계정과 기간제 권한을 관리하는 사내망 다계층 접근통제 시스템**
 
-- 로그인 인증, 토큰 발급, 비활성 계정 접근 차단
-- 직원 명부 기반 사원번호·일회용 초대 코드 가입 및 재사용 방지
-- 기간제 권한 요청·승인·반려·만료·회수 흐름
-- 담당 기능의 요구사항, DB 스키마, 플로우차트 작성
-- 직원 가입, 권한 요청, 승인과 회수 등 주요 시나리오 직접 확인
-- 기술: Python, Flask, PyJWT, SQLite (화면은 React/TypeScript)
 - 서비스 시연: https://sentra.koreacentral.cloudapp.azure.com/
-- GitHub: https://github.com/mingming-01/sentra (비공개 저장소)
+- 저장소: https://github.com/mingming-01/sentra (비공개)
+- 형태: ALEPH 1기 3인 팀 캡스톤
+- 담당: Flask 서버 백엔드, 인증·직원 데이터·권한 요청 처리, 화면 API 연결
 
-네트워크 장비 연동, Syslog/NetFlow 수집 등 별도 환경에서 확인할 기능은 직접 구현한 백엔드 범위와 구분합니다.
+직원의 역할과 소속, 개인별 권한에 따라 사내 자원 접근을 허용하거나 거부하는 시스템입니다. 저는 서버 백엔드를 맡아 계정 생성부터 접근 권한의 요청·승인·만료·회수까지 이어지는 흐름을 구현했습니다.
+
+**구현한 내용**
+- 비밀번호 해시 기반 로그인과 JWT 발급
+- 직원 명부의 사원번호와 일회용 초대 코드를 확인하는 가입 절차
+- 초대 코드 재사용 방지 및 비활성 계정의 로그인·보호 API 접근 차단
+- 직원 및 사용자 데이터 저장 구조와 마이페이지 연동
+- 기간제 권한 요청, 운영자 승인·반려, 승인 권한 만료·회수 처리
+- React/TypeScript 화면과 Flask API 요청·응답 연결
+- 담당 기능의 요구사항 정의, DB 스키마, 플로우차트 작성
+
+**검증한 시나리오**
+직원 사전 등록과 초대 가입, 사용한 초대 코드 재사용 거부, 비활성 계정 차단, 권한 요청·승인·회수 후 접근 결과를 실행해 확인했습니다. 화면에서 메뉴를 숨기는 것만으로 접근을 통제하지 않고 서버가 요청마다 인증과 정책을 판단하도록 구성했습니다.
+
+**기술:** 개인 담당 범위는 Python, Flask, PyJWT, SQLite이며 팀 화면은 React, TypeScript입니다.
+
+네트워크 가상망·Packet Tracer, Syslog/NetFlow 수집, Discord 알림 등은 팀의 별도 담당 영역 또는 별도 환경에서 확인할 범위로 구분합니다.
 
 ### 03. Packtory_DE
 
-인사, 제품, 원자재, 창고, 입출고, 품질 검사, 근무 관리를 연결한 제조·물류 중심의 MES형 팀 프로젝트입니다.
+**인사·제품·자재·창고·품질·근무 업무를 연결한 MES형 생산관리 팀 프로젝트**
 
-- 직원·부서·직급 관리와 부서 코드 연결
-- Product 구조 정리, 원자재·창고·위치·입출고 기능
-- 품질 기준·검사 이력, 근무 스케줄 기능
-- 기존 공통코드와 Mapper·Service·Controller 규칙을 읽고 팀 구조에 맞춰 개발
-- 기술: Java 21, Spring Boot, JPA/Hibernate, MyBatis, QueryDSL, MySQL, Thymeleaf
-- GitHub: https://github.com/mingming-01/packtory_
+- 저장소: https://github.com/mingming-01/packtory_
+- 기간: 2025.03 ~ 2025.05
+- 형태: ITWill 심화 과정 팀 프로젝트
+
+기존 공통 구조를 이해한 뒤 여러 제조 업무 기능을 연결해 구현한 프로젝트입니다. 직원 등록·조회·수정·삭제, 부서·하위 부서와 직급 관리, Product 구조 정리, 원자재·창고·위치·입출고, 품질 기준·검사 이력, 근무 스케줄 기능을 작업했습니다.
+
+**개발 과정에서 경험한 내용**
+- Controller, Service, DTO, Entity, Mapper와 Thymeleaf 화면을 함께 수정
+- 관리자가 등록한 공통코드를 사용하고 DB에는 코드값, 화면에는 한글 명칭을 표시하는 변환 처리
+- 기존 Item 중심 코드를 Product 중심으로 정리
+- JPA와 MyBatis가 함께 사용되는 데이터 접근 구조 파악
+- 팀 서버에서 기능 실행 및 시연
+
+프로젝트 후반 MySQL에서 Oracle로 전환을 시도했으나 SQL·드라이버·설정 수정 범위가 예상보다 커 최종 연결까지 완료하지 못했습니다. 따라서 DB 전환은 완료한 결과로 표현하지 않습니다.
+
+**기술:** Java 21, Spring Boot, JPA/Hibernate, MyBatis, QueryDSL, MySQL, Thymeleaf
 
 ## 기타 프로젝트
 
-- **My Profile:** 공개 프로필에서 출발해 Task 8에서 WebAuthn Passkey 기반 Private Space를 추가한 개인 웹 프로젝트. 계정별 데이터 분리와 Passkey 등록·로그인 검증을 구현했습니다. 학습·시연용 프로토타입입니다. 서비스: https://my-profile-ohhl.onrender.com/ · GitHub: https://github.com/mingming-01/my-profile
-- **MrBean:** 원자재·완제품·BOM·입고·LOT 관리. Java 11, Spring MVC, MyBatis, MySQL, JSP. GitHub: https://github.com/shoqying/MrBean
-- **Stock-Mate:** QR/바코드 기반 상품·재고·창고 관리. 카테고리와 재고 기능 담당. Java 11, Spring MVC, MyBatis, MySQL, JSP, jQuery. GitHub: https://github.com/in27sung/stock-mate
-- **T10 타이핑 연구:** 화면 효과 ON/OFF 조건 각 15회, 총 30회 측정 후 Python 분석. 표본이 작고 동일 문장 비교 결과가 일관되지 않아 관찰 범위 안에서만 해석했습니다. 연구 결과: https://mingming-01.github.io/typing-focus-research/ · GitHub: https://github.com/mingming-01/typing-focus-research
-- **BR-B:** T10 연구를 바탕으로 개인 타이핑 속도와 정확도를 비교하는 웹 앱. 앱: https://mingming-01.github.io/typing-focus-app/ · GitHub: https://github.com/mingming-01/typing-focus-app
-- **PDS Diary:** PLAN / DO / SEE 방식의 계획·실행·회고 서비스. 계획 변경 이력, 예상·실제 시간 비교, 데이터 내보내기 및 자동 테스트 15개. 서비스: https://pds-diary-0u5g.onrender.com/ · GitHub: https://github.com/mingming-01/pds-diary
+- **My Profile:** 공개 프로필과 Task 8의 WebAuthn Passkey Private Space를 구현한 개인 프로젝트. 일회용 초대 코드, Challenge 및 RP ID·Origin 검증, 계정별 데이터 분리와 Passkey 관리 기능을 적용했습니다. 학습·시연용 프로토타입이며 실제 민감정보 보관 서비스가 아닙니다. [서비스](https://my-profile-ohhl.onrender.com/) · [GitHub](https://github.com/mingming-01/my-profile)
+- **MrBean:** 원자재·완제품 CRUD, BOM 연결과 입력값 검증, 날짜 기반 LOT 번호 생성, 입고일 기준 유통기한 계산. Java 11, Spring MVC, MyBatis, MySQL, JSP. [GitHub](https://github.com/shoqying/MrBean)
+- **Stock-Mate:** QR·바코드 기반 상품·재고·창고 관리 프로젝트. 카테고리 CRUD와 SQL·화면 연결, 재고 목록 및 사용자 정보 수정 오류 등을 담당. Java 11, Spring MVC, MyBatis, MySQL, JSP, jQuery. [GitHub](https://github.com/in27sung/stock-mate)
+- **T10 타이핑 연구:** 시각 효과 ON/OFF 조건 각 15회, 총 30회 측정과 Python 분석. 표본이 작고 비교 결과가 일관되지 않아 관찰 범위 안에서 해석했습니다. [연구 결과](https://mingming-01.github.io/typing-focus-research/) · [GitHub](https://github.com/mingming-01/typing-focus-research)
+- **BR-B:** T10 연구를 바탕으로 개인 타이핑 속도와 정확도를 비교하는 웹 앱. [앱](https://mingming-01.github.io/typing-focus-app/) · [GitHub](https://github.com/mingming-01/typing-focus-app)
+- **PDS Diary:** PLAN / DO / SEE 방식의 계획·실행·회고 서비스. 계획 변경 이력, 예상·실제 시간 비교, 데이터 내보내기와 자동 테스트 15개를 구현했습니다. [서비스](https://pds-diary-0u5g.onrender.com/) · [GitHub](https://github.com/mingming-01/pds-diary)
 
-## Project Stack
+## 기술과 적용 경험
 
-기술 숙련도를 임의의 점수로 표현하지 않고, 실제 사용한 프로젝트와 연결해 소개합니다.
+| 영역 | 기술 | 적용 프로젝트 |
+|---|---|---|
+| Backend | Python, Flask, Java, Spring Boot, Spring MVC, REST API | Maple Growth Tracker, SENTRA, Packtory_DE, MrBean, Stock-Mate |
+| Frontend | JavaScript, TypeScript, React, HTML, CSS, Thymeleaf, JSP | Maple Growth Tracker, SENTRA, ITWill 팀 프로젝트 |
+| Database | PostgreSQL, SQLite, MySQL, JPA/Hibernate, MyBatis | Maple Growth Tracker, SENTRA, Packtory_DE |
+| Authentication & Integration | 비밀번호 해시, JWT, WebAuthn, NEXON Open API, Gemini, OpenRouter | SENTRA, My Profile, Maple Growth Tracker |
+| Test & Delivery | unittest, pytest, GitHub Actions, Git, Linux, Render, Vercel, GitHub Pages | 개인 서비스와 팀 프로젝트 |
+| Domain | 제조·생산관리, 원자재, BOM, 재고, 창고, 입출고, 품질·근무 관리 | Packtory_DE, MrBean, Stock-Mate |
 
-| 영역 | 기술 및 경험 |
-|---|---|
-| Backend | Python, Flask, Java, Spring Boot, Spring MVC, REST API |
-| Frontend | JavaScript, TypeScript, React, HTML, CSS, Thymeleaf, JSP |
-| Database | PostgreSQL, SQLite, MySQL, JPA/Hibernate, MyBatis |
-| Authentication & Integration | JWT, WebAuthn, NEXON Open API, Gemini API, OpenRouter |
-| Test & Delivery | unittest, pytest, GitHub Actions, Git, Linux, Render, Vercel, GitHub Pages |
-| Domain | 제조·생산관리, 원자재, BOM, 재고, 창고, 입출고, 품질·근무 관리 |
+기술 숙련도를 임의의 점수로 표현하지 않고, 프로젝트에서 실제 사용한 기술과 담당 범위를 함께 제시합니다.
 
 ## Records 집계 기준
 
-최신 자기소개서에 반영된 집계를 사용합니다.
+최신 자기소개서 기준의 확인된 집계값입니다.
 
-- 기록 기간: 2026-08-11 ~ 2026-11-12
+- 기록 기간: **2026-08-11 ~ 2026-11-12**
 - 기록한 날: **61일**
 - '실천했다': **57일**
 - '일부 실천했다': **4일**
 
-이 수치는 날짜별 원문 회고를 공개하지 않고, 확인된 집계값만 공개합니다. 별도로 관리하는 대표 기록 후보 35건은 전체 기록 일수와 다른 자료이며, 역량별 분류(자기조절력 14건, 대인관계력 13건, 자기동기력 8건)는 해당 후보 35건에만 적용됩니다.
+날짜별 원문 회고는 공개하지 않고 확인된 합계만 표시합니다. 별도로 관리하는 대표 기록 후보 35건은 전체 기록 일수와 다른 자료이며, 역량별 분류(자기조절력 14건, 대인관계력 13건, 자기동기력 8건)는 해당 후보 35건에만 적용됩니다.
 
-## 제출 문서와 자동화
+## 제출 문서와 자동 동기화
 
-공개 문서는 원본 저장소 mingming-01/career-portfolio에서 관리합니다.
+이력서·자기소개서·경력기술서의 원본은 [career-portfolio](https://github.com/mingming-01/career-portfolio)에서 관리합니다. BR-A의 `documents/` 폴더는 공개용 사본입니다.
 
-- 웹페이지용 Markdown: 01_이력서 폴더의 최신 문서
-- 제출용 서식 원본: 제출용_초안 폴더의 최신 DOCX
-- BR-A 공개 파일: documents 폴더의 Markdown 및 PDF
+현재 자동화 흐름은 다음과 같습니다.
 
-자동화 흐름은 다음과 같습니다.
-
-1. 원본 저장소의 지정 Markdown 또는 DOCX가 변경되면 GitHub Actions가 실행됩니다.
-2. Markdown은 BR-A의 documents 폴더로 복사합니다.
-3. DOCX는 LibreOffice headless로 PDF 변환합니다. PDF의 레이아웃은 Markdown이 아니라 DOCX를 기준으로 합니다.
+1. 원본 저장소의 지정 Markdown 또는 DOCX 변경을 GitHub Actions가 감지합니다.
+2. 웹페이지용 Markdown을 BR-A의 `documents/`로 복사합니다.
+3. 제출용 DOCX는 LibreOffice headless로 PDF 변환합니다. PDF 레이아웃의 기준은 Markdown이 아니라 DOCX입니다.
 4. BR-A에 문서 동기화 PR을 생성합니다.
-5. BR-A의 문서 검증 workflow가 허용된 파일 경로, Markdown, PDF 형식을 검사하고 통과한 문서 동기화 PR을 자동 병합합니다.
+5. BR-A의 문서 검증 workflow가 허용된 경로와 파일 형식을 검사하고, 검증을 통과한 문서 동기화 PR을 자동 병합합니다.
 
-원본 저장소에는 BRA_SYNC_TOKEN을 GitHub Actions secret으로 설정해야 합니다. PDF 변환 결과는 원본 DOCX의 서식과 변환 환경에 영향을 받으므로, 배포 후 페이지별 시각 검수도 필요합니다.
+원본 저장소에는 `BRA_SYNC_TOKEN`을 GitHub Actions secret으로 설정해야 합니다. PDF 변환은 원본 DOCX 서식과 변환 환경의 영향을 받으므로, 자동화 성공 여부와 별개로 페이지별 시각 검수가 필요합니다.
 
 ## Continuing Device
 
-device 폴더에는 공개할 기록 후보와 통계를 다시 생성하는 Python 프로그램이 있습니다.
+`device/`에는 기록 후보와 집계 결과를 생성하는 Python 프로그램이 있습니다.
 
-- device/src/generate.py: device/input/records.json에서 공개 후보 생성
-- device/src/stats.py: 최신 확인 집계와 대표 기록 후보를 읽어 device/output/stats.json 생성
-- device/input/ritual-summary.json: 최신 자기소개서 기준의 확인된 합계
-- device/input/ritual-days.json: 날짜별 상태를 별도로 보관한 상세 요약 자료
-- device/output/: 사이트에서 사용하는 결과 파일
+- `device/src/generate.py`: `device/input/records.json`에서 공개 기록 후보 생성
+- `device/src/stats.py`: 확인된 최신 집계와 대표 기록 후보를 읽어 `device/output/stats.json` 생성
+- `device/input/ritual-summary.json`: 최신 자기소개서 기준의 확인된 합계
+- `device/input/ritual-days.json`: 날짜별 상태를 보관한 상세 요약 자료
+- `device/output/`: 웹페이지에서 사용하는 결과 파일
 
-통계는 다음 명령으로 재생성할 수 있습니다.
+재생성 명령:
 
 ```bash
 python3 device/src/generate.py
 python3 device/src/stats.py
 ```
 
-AI가 내용을 자동으로 게시하지 않습니다. 생성된 후보를 확인하고 실제 공개할 내용을 선택하는 최종 판단은 직접 합니다.
+AI가 내용을 자동 게시하지 않습니다. 생성된 후보를 확인하고 공개할 내용을 선택하는 최종 판단은 직접 합니다.
 
 ## 로컬 확인
 
-정적 사이트이므로 별도 빌드 과정 없이 저장소 루트의 index.html을 브라우저에서 열어 확인할 수 있습니다. Records 통계는 device/output/stats.json을 읽습니다.
+정적 사이트이므로 별도 빌드 도구 없이 저장소 루트의 `index.html`을 브라우저에서 열어 확인할 수 있습니다. Records는 `device/output/stats.json`을 읽으므로 로컬 파일 직접 열기에서 fetch가 제한되면 간단한 정적 서버를 사용합니다.
 
-## 개인정보와 표현 원칙
+## 업데이트 원칙
 
-- 공개 가능한 개인 연락처와 프로젝트 링크만 표시합니다.
-- 팀 프로젝트는 직접 담당한 기능과 팀 전체 기능을 구분합니다.
-- 실제로 완료하지 못한 DB 전환이나 별도 환경이 필요한 네트워크 연동은 완료한 것처럼 표현하지 않습니다.
-- My Profile은 학습·시연용 프로토타입이며 실제 민감정보 보관 서비스가 아닙니다.
-- SENTRA 저장소는 비공개이며 공개 페이지에는 공개 가능한 역할과 기술만 요약합니다.
+- 프로젝트 내용은 career-portfolio의 최신 이력서·자기소개서·경력기술서와 프로젝트별 정보를 기준으로 갱신합니다.
+- 직접 구현한 기능과 팀 전체의 기능을 구분합니다.
+- 미완료 작업과 별도 환경에서 검증해야 하는 항목은 완료한 것처럼 쓰지 않습니다.
+- 기술 목록은 실제 저장소와 프로젝트 문서에서 사용 여부를 확인한 뒤 반영합니다.
+- 공개 가능한 연락처와 링크만 게시하며, 비공개 저장소의 코드나 민감한 정보를 공개하지 않습니다.
