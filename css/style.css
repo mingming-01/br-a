@@ -4,6 +4,11 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 72px;
+}
+
+section[id] {
+    scroll-margin-top: 72px;
 }
 
 body {
@@ -482,7 +487,7 @@ a {
     letter-spacing: 0.08em;
 }
 
-.work-main h3 {
+.work-main h4 {
     max-width: 800px;
     margin: 0;
     color: #222;
@@ -953,7 +958,7 @@ a {
         margin-bottom: 25px;
     }
 
-    .work-main h3 {
+    .work-main h4 {
         font-size: 31px;
     }
 
@@ -1286,4 +1291,25 @@ a:focus-visible {
     color: #888;
     font-size: 11px;
     line-height: 1.7;
+}
+
+
+/* Respect reduced-motion preferences and keep anchor targets visible below the fixed header. */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+.device-links {
+    margin-top: 42px;
 }
