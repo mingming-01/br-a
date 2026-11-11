@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>허민 | Backend & Security Portfolio</title>
+    <title>허민 | Backend & Web Service Developer</title>
 
     <meta
         name="description"
-        content="반도체 전공을 바탕으로 백엔드 개발, 접근통제, Passkey 인증 서비스를 구현하고 검증해 온 허민의 포트폴리오입니다."
+        content="반도체 전공을 바탕으로 백엔드와 웹서비스를 개발하고, 제조 IT와 연결되는 문제를 탐구하는 허민의 개발자 포트폴리오입니다."
     >
 
     <link rel="stylesheet" href="css/style.css">
@@ -27,6 +27,7 @@
             <a href="#records">RECORDS</a>
             <a href="#works">WORKS</a>
             <a href="#stack">STACK</a>
+            <a href="#documents">DOCUMENTS</a>
             <a href="#device">DEVICE</a>
         </nav>
     </div>
@@ -42,6 +43,8 @@
 
                 <h1>허민</h1>
 
+                <p class="hero-role">Backend &amp; Web Service Developer</p>
+
                 <p class="hero-intro">
                     궁금한 것을 파고들어 의미를 발견하고,<br>
                     사람들과 함께 앞으로 나아가는 사람.
@@ -50,15 +53,21 @@
 
             <div class="hero-profile">
                 <p>
-                    소프트웨어를 배우며<br>
-                    직접 확인하고, 만들고,<br>
-                    다시 고쳐 온 사람입니다.
+                    Python과 Java 기반의 백엔드 개발을 중심으로<br>
+                    데이터를 다루는 웹서비스를 만들고 있습니다.<br>
+                    반도체 전공과 제조 도메인 경험도 함께 연결합니다.
                 </p>
 
                 <div class="hero-tags">
-                    <span>BACKEND</span>
-                    <span>SECURITY</span>
-                    <span>MANUFACTURING IT</span>
+                    <span>PYTHON · FLASK</span>
+                    <span>JAVA · SPRING</span>
+                    <span>SQL · MANUFACTURING IT</span>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#works">대표 프로젝트 보기</a>
+                    <a href="#documents">제출 문서 보기</a>
+                    <a href="mailto:gjals0318@gmail.com">이메일 보내기</a>
                 </div>
             </div>
         </div>
@@ -197,11 +206,11 @@
                     </p>
 
                     <p>
-                        별도로 진행한 Passkey Private Space 프로젝트에서는 WebAuthn 기반 인증을 구현했습니다.
-                        계정별 초대 코드, Challenge 검증, 세션 보안, Passkey 관리 기능을 적용하고,
-                        로컬 SQLite와 운영 PostgreSQL을 분리해 Render와 Supabase에 배포했습니다.
-                        실제 브라우저에서 계정별 인증과 데이터 분리를 확인하면서 보안 기능은 구현뿐 아니라
-                        운영 환경에서 검증하는 과정까지 중요하다는 것을 배웠습니다.
+                        My Profile 프로젝트에서는 공개 프로필을 구성하고, 별도 기능인 Task 8에서
+                        WebAuthn 기반 Passkey Private Space를 구현했습니다.
+                        Challenge와 RP ID·Origin 검증, 세션 기반 계정별 데이터 분리,
+                        Passkey 관리 기능을 적용하고 Render와 Supabase 환경에서 동작을 확인했습니다.
+                        학습·시연용 프로젝트로, 실제 민감정보를 보관하는 서비스는 아닙니다.
                     </p>
                 </div>
             </article>
@@ -312,7 +321,7 @@
         </div>
 
         <p class="record-note" id="record-note">
-            집계 범위: 2026.08.11 ~ 2026.11.02 · 마감 기록 52일 · 11월 2일 진행 중
+            기록 기간: 2026.08.11 ~ 2026.11.12 · 기록 61일 · 실천 57일 · 일부 실천 4일
         </p>
 
     </section>
@@ -327,160 +336,68 @@
         </div>
 
         <div class="works-list">
-
-            <article class="work">
-                <div class="work-meta">
-                    <span>SENTRA</span>
-                    <span>TEAM CAPSTONE · 2026</span>
-                </div>
-
-                <div class="work-main">
-                    <h3>사내망 다계층 접근통제 시스템</h3>
-
-                    <p>
-                        사내 사용자와 자원에 대한 접근을 역할·부서·개인 단위로 통제하고,
-                        요청 결과를 감사 로그로 관리하는 팀 캡스톤 프로젝트입니다.
-                        Flask 백엔드 API, 로그인 인증, SQLite 데이터베이스 설계 및 마이페이지 연동을 담당했습니다.
-                    </p>
-
-                    <p class="work-stack">
-                        Flask · Python · SQLite · REST API
-                    </p>
-
-                    <div class="work-links">
-                        <a href="https://sentra.koreacentral.cloudapp.azure.com/" target="_blank" rel="noopener noreferrer">서비스 시연 ↗</a>
-                        <a href="https://github.com/mingming-01/sentra" target="_blank" rel="noopener noreferrer">GitHub 저장소 (비공개) ↗</a>
-                    </div>
-                    <span class="work-note">팀 프로젝트 · 저장소는 권한이 있는 사용자만 열람 가능</span>
-                </div>
-            </article>
-
-            <article class="work">
-                <div class="work-meta">
-                    <span>PERSONAL</span>
-                    <span>WEB SECURITY · 2026</span>
-                </div>
-
-                <div class="work-main">
-                    <h3>Passkey Private Space</h3>
-
-                    <p>
-                        WebAuthn 기반 Passkey 인증과 계정별 비공개 영역을 구현한 개인 프로젝트입니다.
-                        일회용 초대 코드, Challenge 검증, 세션 보안, Passkey 관리와
-                        PostgreSQL 기반 운영 데이터 저장을 적용했습니다.
-                    </p>
-
-                    <p class="work-stack">
-                        Flask · WebAuthn · PostgreSQL · Supabase · SQLite · Render
-                    </p>
-
-                    <span class="work-note">학습·시연용 샘플 데이터 사용 · 실제 민감정보 보관 서비스가 아님</span>
-
-                    <div class="work-links">
-                        <a href="https://my-profile-ohhl.onrender.com/" target="_blank" rel="noopener noreferrer">서비스 보기 ↗</a>
-                        <a href="https://github.com/mingming-01/my-profile" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="work">
-                <div class="work-meta">
-                    <span>T10</span>
-                    <span>RESEARCH · 2026</span>
-                </div>
-
-                <div class="work-main">
-                    <h3>
-                        시각적 효과가 타이핑 성능에
-                        미치는 영향
-                    </h3>
-
-                    <p>
-                        시각적 효과의 ON/OFF 조건을 비교하여
-                        타이핑 성능의 차이를 확인한 연구 프로젝트입니다.
-                        직접 데이터를 수집하고 분석하여
-                        가설과 실제 결과를 비교하고 결론을 정리했습니다.
-                    </p>
-
-                    <div class="work-links">
-                        <a href="https://mingming-01.github.io/typing-focus-research/" target="_blank" rel="noopener noreferrer">연구 결과 보기 ↗</a>
-                        <a href="https://github.com/mingming-01/typing-focus-research" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="work">
-                <div class="work-meta">
-                    <span>PERSONAL</span>
-                    <span>WEB SERVICE · 2026</span>
-                </div>
-
-                <div class="work-main">
-                    <h3>Maple Growth Tracker</h3>
-
-                    <p>
-                        MapleStory 캐릭터의 성장 기록을 확인하기 위해 만든
-                        개인 웹서비스입니다.
-                        공개 API에서 캐릭터 데이터를 가져와
-                        성장 추이를 확인할 수 있도록 만들고,
-                        실제로 사용할 수 있는 형태까지 구현하고 배포했습니다.
-                    </p>
-
-                    <div class="work-links">
-                        <a href="https://maple-growth-tracker.onrender.com/" target="_blank" rel="noopener noreferrer">서비스 보기 ↗</a>
-                        <a href="https://github.com/mingming-01/maple-growth-tracker" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="work">
-                <div class="work-meta">
-                    <span>BR-B</span>
-                    <span>APP · 2026</span>
-                </div>
-
-                <div class="work-main">
-                    <h3>타이핑 집중 환경 비교기</h3>
-
-                    <p>
-                        「시각적 효과가 타이핑 성능에 미치는 영향」 논문을 바탕으로
-                        시각 효과 ON/OFF 환경에서 직접 타이핑하고
-                        자신의 속도와 정확도를 비교할 수 있도록 만든 웹 앱입니다.
-                    </p>
-
-                    <div class="work-links">
-                        <a href="https://mingming-01.github.io/typing-focus-app/" target="_blank" rel="noopener noreferrer">앱 실행 ↗</a>
-                        <a href="https://github.com/mingming-01/typing-focus-app" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="work">
-                <div class="work-meta">
-                    <span>PERSONAL</span>
-                    <span>PRODUCTIVITY · 2026</span>
-                </div>
-
-                <div class="work-main">
-                    <h3>PDS Diary</h3>
-
-                    <p>
-                        계획(PLAN), 실행(DO), 회고(SEE)를 한 흐름으로 기록할 수 있도록 만든
-                        개인 관리 서비스입니다. 해야 할 일을 정리하고 실행한 뒤,
-                        하루의 결과를 돌아볼 수 있도록 구성했습니다.
-                    </p>
-
-                    <p class="work-stack">
-                        Web Service · PLAN / DO / SEE
-                    </p>
-
-                    <div class="work-links">
-                        <a href="https://pds-diary-0u5g.onrender.com/" target="_blank" rel="noopener noreferrer">서비스 보기 ↗</a>
-                        <a href="https://github.com/mingming-01/pds-diary" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                    </div>
-                </div>
-            </article>
-
+            <div class="works-group-label">
+                <span>01</span>
+                <div><h3>Representative Projects</h3><p>직접 기획하거나 핵심 기능을 담당한 프로젝트입니다.</p></div>
+            </div>
+            <article class="work"><div class="work-meta"><span>MAPLE GROWTH TRACKER</span><span>PERSONAL · 2026.09 —</span></div><div class="work-main">
+                <h3>게임 캐릭터 성장 분석 웹서비스</h3>
+                <p>NEXON Open API의 캐릭터 데이터를 날짜별로 저장하고, 기간별 성장 추이와 캐릭터 비교, AI 성장 리포트를 제공하는 개인 웹서비스입니다. 기획부터 화면·서버 개발, 데이터 저장 구조, 외부 API 연동과 배포까지 담당했습니다.</p>
+                <p>정상 데이터와 아직 공개되지 않은 날짜, 일시적인 API 오류를 구분해 기록을 다루고, 성장 지표는 별도 계산 로직에서 산출하도록 AI 설명 기능과 역할을 나눴습니다. Gemini 장애 시 OpenRouter로 대체하는 흐름과 자동 테스트도 구성했습니다.</p>
+                <p class="work-stack">Python · Flask · React 19 · Vite · PostgreSQL · SQLite · NEXON Open API · Gemini · OpenRouter</p>
+                <div class="work-links"><a href="https://maple-growth-tracker.onrender.com/" target="_blank" rel="noopener noreferrer">서비스 보기 ↗</a><a href="https://github.com/mingming-01/maple-growth-tracker" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+            </div></article>
+            <article class="work"><div class="work-meta"><span>SENTRA</span><span>TEAM CAPSTONE · 2026</span></div><div class="work-main">
+                <h3>사내망 다계층 접근통제 시스템</h3>
+                <p>직원의 역할·소속·개인 권한에 따라 사내 자원 접근을 판정하는 3인 팀 캡스톤입니다. 서버 백엔드를 담당해 로그인 인증, 직원 명부 기반 초대 가입, 계정 비활성화, 기간제 권한 요청·승인·만료·회수 흐름을 구현했습니다.</p>
+                <p>인증과 정책 판정을 서버에서 수행하도록 구성하고, 가입·초대 코드 재사용 방지, 비활성 계정 차단, 권한 승인과 회수 시나리오를 직접 실행해 확인했습니다. 네트워크 장비 연동과 로그 수집 등 별도 담당 영역은 제 구현 범위와 구분합니다.</p>
+                <p class="work-stack">Python · Flask · PyJWT · SQLite · React · TypeScript</p>
+                <div class="work-links"><a href="https://sentra.koreacentral.cloudapp.azure.com/" target="_blank" rel="noopener noreferrer">서비스 시연 ↗</a><a href="https://github.com/mingming-01/sentra" target="_blank" rel="noopener noreferrer">GitHub 저장소 ↗</a></div>
+                <span class="work-note">팀 프로젝트 · 저장소는 권한이 있는 사용자만 열람 가능</span>
+            </div></article>
+            <article class="work"><div class="work-meta"><span>PACKTORY_DE</span><span>TEAM PROJECT · 2025.03 — 05</span></div><div class="work-main">
+                <h3>제조·물류 업무를 연결한 생산관리 시스템</h3>
+                <p>인사, 제품, 원자재, 창고, 입출고, 품질 검사와 근무 관리를 다룬 MES형 팀 프로젝트입니다. 직원·부서·직급 관리부터 Product, 원자재·창고·입출고, 품질 기준과 검사 이력, 근무 스케줄 기능을 작업했습니다.</p>
+                <p>기존 공통코드와 SQL Mapper·Service·Controller 구조를 읽고 팀 규칙에 맞춰 기능을 연결했습니다. DB에는 코드값을 저장하고 화면에는 한글 명칭을 표시하는 변환 처리도 경험했습니다.</p>
+                <p class="work-stack">Java 21 · Spring Boot · JPA/Hibernate · MyBatis · QueryDSL · MySQL · Thymeleaf</p>
+                <div class="work-links"><a href="https://github.com/mingming-01/packtory_" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+            </div></article>
+            <div class="works-group-label works-group-secondary"><span>02</span><div><h3>Other Projects</h3><p>다양한 도메인과 기술을 경험한 개인·팀 프로젝트입니다.</p></div></div>
+            <article class="work"><div class="work-meta"><span>MY PROFILE</span><span>PERSONAL · 2026</span></div><div class="work-main">
+                <h3>My Profile · Passkey Private Space</h3>
+                <p>나를 소개하는 공개 프로필에서 출발해 Task 8에서 WebAuthn Passkey 기반의 비공개 공간을 추가한 개인 웹 프로젝트입니다. 일회용 초대 코드, Challenge와 RP ID·Origin 검증, 세션 기반 계정별 데이터 분리, Passkey 등록·삭제를 구현했습니다.</p>
+                <p class="work-stack">Python · Flask · WebAuthn · SQLite · PostgreSQL · Supabase · Render</p>
+                <span class="work-note">학습·시연용 프로토타입 · 실제 민감정보 보관 서비스가 아님</span>
+                <div class="work-links"><a href="https://my-profile-ohhl.onrender.com/" target="_blank" rel="noopener noreferrer">서비스 보기 ↗</a><a href="https://github.com/mingming-01/my-profile" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+            </div></article>
+            <article class="work"><div class="work-meta"><span>MRBEAN</span><span>TEAM PROJECT</span></div><div class="work-main">
+                <h3>제조·생산관리 웹 프로젝트</h3>
+                <p>원자재와 완제품, BOM(제품 구성), 입고와 LOT 번호를 관리하는 팀 프로젝트입니다. 원자재·완제품 CRUD, BOM 연결과 입력값 검증, 날짜 기반 LOT 번호 생성, 입고일 기준 유통기한 계산 기능을 담당했습니다.</p>
+                <p class="work-stack">Java 11 · Spring MVC · MyBatis · MySQL · JSP</p>
+                <div class="work-links"><a href="https://github.com/shoqying/MrBean" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+            </div></article>
+            <article class="work"><div class="work-meta"><span>STOCK-MATE</span><span>TEAM PROJECT</span></div><div class="work-main">
+                <h3>QR·바코드 기반 재고 관리 시스템</h3>
+                <p>상품과 재고, 창고 입출고를 관리하는 팀 웹서비스입니다. 카테고리 CRUD와 관련 SQL·화면 연결, 재고 목록 수정, 다른 기능과 맞물리는 데이터 흐름을 확인하며 작업했습니다.</p>
+                <p class="work-stack">Java 11 · Spring MVC · MyBatis · MySQL · JSP · jQuery</p>
+                <div class="work-links"><a href="https://github.com/in27sung/stock-mate" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+            </div></article>
+            <article class="work"><div class="work-meta"><span>T10</span><span>RESEARCH · 2026</span></div><div class="work-main">
+                <h3>시각적 효과가 타이핑 성능에 미치는 영향</h3>
+                <p>화면 효과 ON/OFF 조건에서 각 15회, 총 30회의 타이핑 데이터를 수집하고 Python으로 분석한 연구 프로젝트입니다. 전체 평균과 동일 문장 비교 결과가 일치하지 않아 표본과 관찰 범위 안에서만 결론을 정리했습니다.</p>
+                <div class="work-links"><a href="https://mingming-01.github.io/typing-focus-research/" target="_blank" rel="noopener noreferrer">연구 결과 보기 ↗</a><a href="https://github.com/mingming-01/typing-focus-research" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+            </div></article>
+            <article class="work"><div class="work-meta"><span>BR-B</span><span>WEB APP · 2026</span></div><div class="work-main">
+                <h3>타이핑 집중 환경 비교기</h3>
+                <p>T10 연구를 바탕으로 시각 효과 ON/OFF 환경에서 직접 타이핑하고 개인의 속도와 정확도를 비교할 수 있도록 만든 웹 앱입니다. 개인 테스트 결과와 연구 집계 결과를 구분해 보여 줍니다.</p>
+                <div class="work-links"><a href="https://mingming-01.github.io/typing-focus-app/" target="_blank" rel="noopener noreferrer">앱 실행 ↗</a><a href="https://github.com/mingming-01/typing-focus-app" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+            </div></article>
+            <article class="work"><div class="work-meta"><span>PDS DIARY</span><span>PERSONAL · 2026</span></div><div class="work-main">
+                <h3>계획·실행·회고 기록 서비스</h3>
+                <p>PLAN / DO / SEE 흐름으로 계획과 실행, 회고를 기록하는 개인 서비스입니다. 계획 변경 이력, 예상 시간과 실제 시간 비교, 데이터 내보내기를 구현하고 자동 테스트 15개로 동작을 확인했습니다.</p>
+                <p class="work-stack">Python · Flask · SQLite</p>
+                <div class="work-links"><a href="https://pds-diary-0u5g.onrender.com/" target="_blank" rel="noopener noreferrer">서비스 보기 ↗</a><a href="https://github.com/mingming-01/pds-diary" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+            </div></article>
         </div>
 
     </section>
@@ -500,40 +417,19 @@
         </div>
 
         <div class="stack-grid">
-            <article class="stack-card">
-                <span>01 · BACKEND</span>
-                <h3>서버 개발</h3>
-                <p>Java · Python · Flask · REST API</p>
-                <small>아이티윌 팀 프로젝트 · SENTRA · Passkey Private Space · Maple Growth Tracker</small>
-            </article>
-
-            <article class="stack-card">
-                <span>02 · FRONTEND</span>
-                <h3>웹 화면 구현</h3>
-                <p>JavaScript · HTML · CSS · React · TypeScript</p>
-                <small>개인 웹 프로젝트 · SENTRA 팀 프로젝트</small>
-            </article>
-
-            <article class="stack-card">
-                <span>03 · DATABASE</span>
-                <h3>데이터 저장</h3>
-                <p>SQLite · PostgreSQL · Supabase</p>
-                <small>SENTRA · Passkey Private Space · Maple Growth Tracker</small>
-            </article>
-
-            <article class="stack-card">
-                <span>04 · SECURITY & OPERATIONS</span>
-                <h3>인증 및 배포 환경</h3>
-                <p>WebAuthn · Git · GitHub · Linux</p>
-                <small>Passkey Private Space · SENTRA · 개인 프로젝트 배포</small>
-            </article>
+            <article class="stack-card"><span>01 · BACKEND</span><h3>서버 개발</h3><p>Python · Flask · Java · Spring Boot · REST API</p><small>Maple Growth Tracker · SENTRA · Packtory_DE · MrBean · Stock-Mate</small></article>
+            <article class="stack-card"><span>02 · FRONTEND</span><h3>웹 화면 구현</h3><p>JavaScript · TypeScript · React · HTML · CSS · Thymeleaf · JSP</p><small>Maple Growth Tracker · SENTRA · ITWill 팀 프로젝트</small></article>
+            <article class="stack-card"><span>03 · DATABASE</span><h3>데이터 저장과 조회</h3><p>PostgreSQL · SQLite · MySQL · JPA · MyBatis</p><small>Maple Growth Tracker · SENTRA · Packtory_DE · My Profile</small></article>
+            <article class="stack-card"><span>04 · INTEGRATION</span><h3>인증과 외부 연동</h3><p>JWT · WebAuthn · NEXON Open API · Gemini API · OpenRouter</p><small>SENTRA · My Profile · Maple Growth Tracker</small></article>
+            <article class="stack-card"><span>05 · DELIVERY</span><h3>테스트와 배포</h3><p>Git · GitHub Actions · unittest · pytest · Render · Vercel</p><small>개인 서비스 배포 · 자동 테스트와 빌드 검증</small></article>
+            <article class="stack-card"><span>06 · DOMAIN</span><h3>제조·업무 시스템</h3><p>제조·생산관리 · 원자재 · BOM · 재고 · 입출고</p><small>반도체 전공 · Packtory_DE · MrBean · Stock-Mate</small></article>
         </div>
 
     </section>
 
 
     <!-- DOCUMENTS -->
-    <section class="documents">
+    <section class="documents" id="documents">
 
         <div class="section-title">
             <span>05</span>
@@ -650,7 +546,7 @@
 </main>
 
 
-<footer class="footer">
+<footer class="footer" id="contact">
 
     <div class="footer-main">
         <div>
@@ -665,6 +561,7 @@
         <div class="contact">
             <span>CONTACT</span>
 
+            <a href="mailto:gjals0318@gmail.com">gjals0318@gmail.com ↗</a>
             <a
                 href="https://github.com/mingming-01"
                 target="_blank"
